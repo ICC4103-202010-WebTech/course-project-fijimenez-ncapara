@@ -1,3 +1,9 @@
+# Students in the Project
+
+* Francisco Javier Jimenez Iglesias
+* Nicolas Claus Apara Reineking
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
