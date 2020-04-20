@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_093844) do
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "event_id"
+    t.index ["event_id"], name: "index_event_files_on_event_id"
   end
 
   create_table "event_invitations", force: :cascade do |t|
@@ -61,8 +63,6 @@ ActiveRecord::Schema.define(version: 2020_04_20_093844) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.integer "event_file_id"
-    t.index ["event_file_id"], name: "index_events_on_event_file_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -145,10 +145,10 @@ ActiveRecord::Schema.define(version: 2020_04_20_093844) do
   add_foreign_key "comments", "users"
   add_foreign_key "date_options", "events"
   add_foreign_key "date_options", "vote_dates"
+  add_foreign_key "event_files", "events"
   add_foreign_key "event_invitations", "events"
   add_foreign_key "event_invitations", "users"
   add_foreign_key "event_invitations", "vote_dates"
-  add_foreign_key "events", "event_files"
   add_foreign_key "events", "users"
   add_foreign_key "inbox_messages", "mail_boxes"
   add_foreign_key "notifications", "users"
