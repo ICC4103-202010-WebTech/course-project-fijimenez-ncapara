@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_185354) do
+ActiveRecord::Schema.define(version: 2020_04_20_192515) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
@@ -126,13 +126,13 @@ ActiveRecord::Schema.define(version: 2020_04_20_185354) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password"
-    t.integer "administrator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
     t.string "location"
     t.string "bio"
     t.integer "mail_box_id"
+    t.boolean "administrator"
     t.index ["mail_box_id"], name: "index_users_on_mail_box_id"
   end
 
