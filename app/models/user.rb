@@ -6,5 +6,7 @@ class User < ApplicationRecord
   has_many :event_invitations
   has_many :reports
   has_many :comments
+  has_one :mail_box
+  has_many :inbox_messages, :through => mail_box
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
