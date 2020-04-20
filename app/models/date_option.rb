@@ -1,4 +1,4 @@
 class DateOption < ApplicationRecord
-  belongs_to :vote_date
+  has_many :vote_date
   belongs_to :event
 end

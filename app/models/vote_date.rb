@@ -1,4 +1,4 @@
 class VoteDate < ApplicationRecord
   belongs_to :event_invitation
-  has_one :date_option
+  belongs_to :date_option
 end

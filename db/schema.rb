@@ -27,10 +27,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
     t.date "desired_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "vote_date_id"
     t.integer "event_id"
     t.index ["event_id"], name: "index_date_options_on_event_id"
-    t.index ["vote_date_id"], name: "index_date_options_on_vote_date_id"
   end
 
   create_table "event_files", force: :cascade do |t|
@@ -47,10 +45,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.integer "event_id"
-    t.integer "vote_date_id"
     t.index ["event_id"], name: "index_event_invitations_on_event_id"
     t.index ["user_id"], name: "index_event_invitations_on_user_id"
-    t.index ["vote_date_id"], name: "index_event_invitations_on_vote_date_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -93,14 +89,14 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "organization_id"
+    t.index ["organization_id"], name: "index_organization_files_on_organization_id"
   end
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "organization_file_id"
-    t.index ["organization_file_id"], name: "index_organizations_on_organization_file_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -139,23 +135,27 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
   create_table "vote_dates", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "event_invitation_id"
+    t.integer "date_option_id"
+    t.index ["date_option_id"], name: "index_vote_dates_on_date_option_id"
+    t.index ["event_invitation_id"], name: "index_vote_dates_on_event_invitation_id"
   end
 
   add_foreign_key "comments", "events"
   add_foreign_key "comments", "users"
   add_foreign_key "date_options", "events"
-  add_foreign_key "date_options", "vote_dates"
   add_foreign_key "event_files", "events"
   add_foreign_key "event_invitations", "events"
   add_foreign_key "event_invitations", "users"
-  add_foreign_key "event_invitations", "vote_dates"
   add_foreign_key "events", "users"
   add_foreign_key "inbox_messages", "mail_boxes"
   add_foreign_key "notifications", "events"
-  add_foreign_key "organizations", "organization_files"
+  add_foreign_key "organization_files", "organizations"
   add_foreign_key "reports", "events"
   add_foreign_key "reports", "users"
   add_foreign_key "subscriptions", "organizations"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "users", "mail_boxes"
+  add_foreign_key "vote_dates", "date_options"
+  add_foreign_key "vote_dates", "event_invitations"
 end
