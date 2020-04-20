@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_073714) do
+ActiveRecord::Schema.define(version: 2020_04_20_074205) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
     t.integer "reply_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "event_files", force: :cascade do |t|
+    t.string "file"
+    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -36,7 +43,9 @@ ActiveRecord::Schema.define(version: 2020_04_20_073714) do
     t.integer "event_invitation_id"
     t.integer "report_id"
     t.integer "comment_id"
+    t.integer "event_file_id"
     t.index ["comment_id"], name: "index_events_on_comment_id"
+    t.index ["event_file_id"], name: "index_events_on_event_file_id"
     t.index ["event_invitation_id"], name: "index_events_on_event_invitation_id"
     t.index ["report_id"], name: "index_events_on_report_id"
   end
@@ -92,6 +101,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_073714) do
   end
 
   add_foreign_key "events", "comments"
+  add_foreign_key "events", "event_files"
   add_foreign_key "events", "event_invitations"
   add_foreign_key "events", "reports"
   add_foreign_key "organizations", "organization_files"

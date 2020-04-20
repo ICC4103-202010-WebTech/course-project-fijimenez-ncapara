@@ -3,4 +3,5 @@ class Event < ApplicationRecord
   has_many :event_invitations
   has_many :reports
   has_many :comments
+  has_many :event_files
 end
