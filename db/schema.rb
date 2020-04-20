@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_045515) do
+ActiveRecord::Schema.define(version: 2020_04_20_065201) do
+
+  create_table "organization_files", force: :cascade do |t|
+    t.string "file"
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "subscription_id"
+    t.integer "organization_file_id"
+    t.index ["organization_file_id"], name: "index_organizations_on_organization_file_id"
+    t.index ["subscription_id"], name: "index_organizations_on_subscription_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string "rank"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,12 +41,14 @@ ActiveRecord::Schema.define(version: 2020_04_20_045515) do
     t.integer "administrator_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "organization_id"
     t.string "name"
     t.string "location"
     t.string "bio"
-    t.index ["organization_id"], name: "index_users_on_organization_id"
+    t.integer "subscription_id"
+    t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
-  add_foreign_key "users", "organizations"
+  add_foreign_key "organizations", "organization_files"
+  add_foreign_key "organizations", "subscriptions"
+  add_foreign_key "users", "subscriptions"
 end
