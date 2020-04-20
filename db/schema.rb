@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_074205) do
+ActiveRecord::Schema.define(version: 2020_04_20_080459) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
     t.integer "reply_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "date_options", force: :cascade do |t|
+    t.date "desired_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -29,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_074205) do
   create_table "event_invitations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "vote_date_id"
+    t.index ["vote_date_id"], name: "index_event_invitations_on_vote_date_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -44,7 +52,9 @@ ActiveRecord::Schema.define(version: 2020_04_20_074205) do
     t.integer "report_id"
     t.integer "comment_id"
     t.integer "event_file_id"
+    t.integer "date_option_id"
     t.index ["comment_id"], name: "index_events_on_comment_id"
+    t.index ["date_option_id"], name: "index_events_on_date_option_id"
     t.index ["event_file_id"], name: "index_events_on_event_file_id"
     t.index ["event_invitation_id"], name: "index_events_on_event_invitation_id"
     t.index ["report_id"], name: "index_events_on_report_id"
@@ -100,7 +110,16 @@ ActiveRecord::Schema.define(version: 2020_04_20_074205) do
     t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
+  create_table "vote_dates", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "date_option_id"
+    t.index ["date_option_id"], name: "index_vote_dates_on_date_option_id"
+  end
+
+  add_foreign_key "event_invitations", "vote_dates"
   add_foreign_key "events", "comments"
+  add_foreign_key "events", "date_options"
   add_foreign_key "events", "event_files"
   add_foreign_key "events", "event_invitations"
   add_foreign_key "events", "reports"
@@ -111,4 +130,5 @@ ActiveRecord::Schema.define(version: 2020_04_20_074205) do
   add_foreign_key "users", "events"
   add_foreign_key "users", "reports"
   add_foreign_key "users", "subscriptions"
+  add_foreign_key "vote_dates", "date_options"
 end
