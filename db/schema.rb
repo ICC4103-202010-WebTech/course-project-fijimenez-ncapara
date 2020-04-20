@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_072420) do
+ActiveRecord::Schema.define(version: 2020_04_20_073714) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "description"
+    t.integer "reply_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "event_invitations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -28,6 +35,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_072420) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "event_invitation_id"
     t.integer "report_id"
+    t.integer "comment_id"
+    t.index ["comment_id"], name: "index_events_on_comment_id"
     t.index ["event_invitation_id"], name: "index_events_on_event_invitation_id"
     t.index ["report_id"], name: "index_events_on_report_id"
   end
@@ -74,16 +83,20 @@ ActiveRecord::Schema.define(version: 2020_04_20_072420) do
     t.integer "event_id"
     t.integer "event_invitation_id"
     t.integer "report_id"
+    t.integer "comment_id"
+    t.index ["comment_id"], name: "index_users_on_comment_id"
     t.index ["event_id"], name: "index_users_on_event_id"
     t.index ["event_invitation_id"], name: "index_users_on_event_invitation_id"
     t.index ["report_id"], name: "index_users_on_report_id"
     t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
+  add_foreign_key "events", "comments"
   add_foreign_key "events", "event_invitations"
   add_foreign_key "events", "reports"
   add_foreign_key "organizations", "organization_files"
   add_foreign_key "organizations", "subscriptions"
+  add_foreign_key "users", "comments"
   add_foreign_key "users", "event_invitations"
   add_foreign_key "users", "events"
   add_foreign_key "users", "reports"
