@@ -3,5 +3,7 @@ class User < ApplicationRecord
   belongs_to :administrator, class_name: "User", optional: true
   has_many :organizations, through: Subscription
   has_many :events
+  has_many :event_invitations
+  has_many :reports
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
