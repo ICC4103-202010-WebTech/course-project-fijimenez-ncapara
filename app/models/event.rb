@@ -5,4 +5,5 @@ class Event < ApplicationRecord
   has_many :comments
   has_many :event_files
   has_many :date_options
+  has_one :notification
 end
