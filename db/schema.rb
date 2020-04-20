@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
     t.string "location"
     t.string "bio"
     t.integer "mail_box_id"
-    t.boolean "administrator"
+    t.boolean "administrator", default: false
     t.index ["mail_box_id"], name: "index_users_on_mail_box_id"
   end
 
