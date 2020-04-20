@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_065201) do
+ActiveRecord::Schema.define(version: 2020_04_20_070611) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "start_date"
+    t.string "description"
+    t.integer "minVotes"
+    t.integer "assistants"
+    t.boolean "public"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "organization_files", force: :cascade do |t|
     t.string "file"
@@ -45,10 +56,13 @@ ActiveRecord::Schema.define(version: 2020_04_20_065201) do
     t.string "location"
     t.string "bio"
     t.integer "subscription_id"
+    t.integer "event_id"
+    t.index ["event_id"], name: "index_users_on_event_id"
     t.index ["subscription_id"], name: "index_users_on_subscription_id"
   end
 
   add_foreign_key "organizations", "organization_files"
   add_foreign_key "organizations", "subscriptions"
+  add_foreign_key "users", "events"
   add_foreign_key "users", "subscriptions"
 end
