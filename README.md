@@ -27,7 +27,9 @@
 * User.where(administrator:true).map{|x| x.name}
 #### 11. Users should have a unique username and/or email address, so we will attempt to create two users with the same unique attribute.
 there is the next validation on the user model:
+
 * validates :name, uniqueness: {message: "Name already exists!!"}
+
 the same goes to email
 #### 12. E-mail addresses should be well-formed. We will attempt to try to update a model containing an ill-formatted email address.
 there is the next validation on the user model:
