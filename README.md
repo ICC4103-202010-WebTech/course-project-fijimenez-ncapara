@@ -5,13 +5,16 @@
 
 #Queries
 
-####1 . Get all events created by certain user.   (user -> id=2)
-Event.joins(:user).where(users: {id:2})
+#### 1 . Get all events created by certain user.   (user -> id=2)
+* Event.joins(:user).where(users: {id:2})
 #### 2. Get all users belonging to an organization.
-User.joins(:organizations).where(organizations: {id:1}).map{|x| x.name}
+* User.joins(:organizations).where(organizations: {id:1}).map{|x| x.name}
 #### 3. Get all public events in an organization.
+* 
 #### 4. Get all private events in an organization.
+* 
 #### 5. Get all guests that have been invited to a certain event.
+* 
 #### 6. Get all guests that have voted for a date option in a certain event.
 #### 7. Get all comments written by users on a specific event.
 #### 8. Get all comments written by a specific user on all events.
