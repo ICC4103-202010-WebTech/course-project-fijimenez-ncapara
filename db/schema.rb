@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_192515) do
+ActiveRecord::Schema.define(version: 2020_04_21_024024) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "organization_id"
+    t.index ["organization_id"], name: "index_events_on_organization_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -147,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
   add_foreign_key "event_files", "events"
   add_foreign_key "event_invitations", "events"
   add_foreign_key "event_invitations", "users"
+  add_foreign_key "events", "organizations"
   add_foreign_key "events", "users"
   add_foreign_key "inbox_messages", "mail_boxes"
   add_foreign_key "mail_boxes", "users"

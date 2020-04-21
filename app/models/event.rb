@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user, optional: true
+  belongs_to :organization, optional: true
   has_many :event_invitations
   has_many :reports
   has_many :comments
