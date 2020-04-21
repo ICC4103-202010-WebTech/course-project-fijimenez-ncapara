@@ -38,6 +38,7 @@ s4 = Subscription.create!(rank:"follower",user:u5,organization:o1)
 e1 = Event.create!(name:"Code Challenge",description:"Coding for Homework at 6:00 AM",minVotes:2,public:true, user:u2)
 
 e2 = Event.create!(name:"Not violence, drink piscola 'perro'",description:"hey 'perro', violence is for nerds, now its time to piscola with white",minVotes:4,public:true, user:u4)
+e3 = Event.create!(name:"Norris Cup",description:"Hwo get no the Chuck level)",minVotes:3,public:false, user:u2, organization:o1)
 
 #EVENT FILES
 ef11 = EventFile.create!(event:e1, file:"Computer.jpg")
