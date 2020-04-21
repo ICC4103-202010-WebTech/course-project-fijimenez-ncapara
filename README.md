@@ -3,7 +3,9 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
-#Queries
+#Queries 
+
+##You can use the line command:  rake db:model_queries, they are all done there
 
 #### 1 . Get all events created by certain user.   (user -> id = 2)
 * Event.joins(:user).where(users: {id:2})
@@ -15,8 +17,8 @@
 * Event.joins(user: :organizations).where(organizations: {id:1},public:false).map{|x| x.name}
 #### 5. Get all guests that have been invited to a certain event. (event -> id = 1)
 * User.joins(event_invitations: :event).where(events: {id:1}).map{|x| x.name}
-#### 6. Get all guests that have voted for a date option in a certain event.  
-* 
+#### 6. Get all guests that have voted for a date option in a certain event.  (event -> id = 1), it passes though VoteDate to know the ones who voted
+*  User.joins(event_invitations: {vote_date: {date_option: :event}}).where(events: {id:1}).map{|x| x.name}
 #### 7. Get all comments written by users on a specific event.     (event -> id = 2)
 * Comment.joins(:event).where(events: {id:2}).map{|x| x.description}
 #### 8. Get all comments written by a specific user on all events. (event -> id = 2),(user -> id = 2)

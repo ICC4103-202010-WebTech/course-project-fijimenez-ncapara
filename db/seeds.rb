@@ -50,6 +50,7 @@ ef21 = EventFile.create!(event:e2,file:"Mistral+Ginger.jgp")
 ei1 = EventInvitation.create!(user:u3,event:e1)
 ei2 = EventInvitation.create!(user:u2,event:e1)
 ei3 = EventInvitation.create!(user:u4,event:e2)
+ei4 = EventInvitation.create!(user:u4,event:e1)
 
 #NOTIFICATIONS
 n11 = Notification.create!(event:e1,note:"the time for the event will be 2020-06-13",file:"Creator Date Notification")
