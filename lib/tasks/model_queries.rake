@@ -25,10 +25,10 @@ namespace :db do
     puts(result)
     puts("EOQ")
 
-    #puts("Query 6: ")
-    #result = ""
-    #puts(result)
-    #puts("EOQ")
+    puts("Query 6:  Get all guests that have voted for a date option in a certain event. (event -> id = 1), it passes though VoteDate to know the ones who voted")
+    result = User.joins(event_invitations: {vote_date: {date_option: :event}}).where(events: {id:1}).map{|x| x.name}
+    puts(result)
+    puts("EOQ")
 
     puts("Query 7: Get all comments written by users on a specific event. (event -> id = 2)")
     result = Comment.joins(:event).where(events: {id:2}).map{|x| x.description}
