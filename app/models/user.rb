@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :reports
   has_many :comments
   has_one :mail_box
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } ,uniqueness: {message: "Email already exists!!!"}
+  validates :name, uniqueness: {message: "Name already exists!!"}
 end
