@@ -1,4 +1,5 @@
 class Organization < ApplicationRecord
-  has_many :users, :through => Subscription
+  has_many :users, :through => :subscriptions
   has_many :organization_files
+  has_many :subscriptions
 end

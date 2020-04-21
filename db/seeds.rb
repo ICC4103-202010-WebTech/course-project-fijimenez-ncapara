@@ -30,6 +30,9 @@ of2 = OrganizationFile.create!(file: "Bruce Lee beats Chuck Norris",organization
 #SUBSCRIPTIONS
 s1 = Subscription.create!(rank:"Leader",user:u2,organization:o1)
 s2 = Subscription.create!(rank:"Leader",user:u3,organization:o2)
+s3 = Subscription.create!(rank:"follower",user:u1,organization:o1)
+s4 = Subscription.create!(rank:"follower",user:u5,organization:o1)
+
 
 #EVENTS
 e1 = Event.create!(name:"Code Challenge",description:"Coding for Homework at 6:00 AM",minVotes:2,public:true, user:u2)
