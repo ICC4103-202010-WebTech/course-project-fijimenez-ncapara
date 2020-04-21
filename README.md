@@ -3,9 +3,9 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
-#Queries 
+# Queries 
 
-##You can use the line command:  rake db:model_queries, they are all done there
+## You can use the line command:  rake db:model_queries, they are all done there
 
 #### 1 . Get all events created by certain user.   (user -> id = 2)
 * Event.joins(:user).where(users: {id:2})
