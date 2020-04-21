@@ -92,5 +92,5 @@ mb3 = MailBox.create!(user:u3)
 mb4 = MailBox.create!(user:u4)
 mb5 = MailBox.create!(user:u5)
 
-ib1 = InboxMessage.create!(mailbox:mb2,message:"1v1 in the Code Challenge")
-ib2 = InboxMessage.create!(mailbox:mb3,message:"It´s on!")
+ib1 = InboxMessage.create!(mail_box:mb2,message:"1v1 in the Code Challenge")
+ib2 = InboxMessage.create!(mail_box:mb3,message:"It´s on!")

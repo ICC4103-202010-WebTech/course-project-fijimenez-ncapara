@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
   create_table "mail_boxes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_mail_boxes_on_user_id"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -127,9 +129,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
     t.string "name"
     t.string "location"
     t.string "bio"
-    t.integer "mail_box_id"
     t.boolean "administrator", default: false
-    t.index ["mail_box_id"], name: "index_users_on_mail_box_id"
   end
 
   create_table "vote_dates", force: :cascade do |t|
@@ -149,13 +149,13 @@ ActiveRecord::Schema.define(version: 2020_04_20_192515) do
   add_foreign_key "event_invitations", "users"
   add_foreign_key "events", "users"
   add_foreign_key "inbox_messages", "mail_boxes"
+  add_foreign_key "mail_boxes", "users"
   add_foreign_key "notifications", "events"
   add_foreign_key "organization_files", "organizations"
   add_foreign_key "reports", "events"
   add_foreign_key "reports", "users"
   add_foreign_key "subscriptions", "organizations"
   add_foreign_key "subscriptions", "users"
-  add_foreign_key "users", "mail_boxes"
   add_foreign_key "vote_dates", "date_options"
   add_foreign_key "vote_dates", "event_invitations"
 end
