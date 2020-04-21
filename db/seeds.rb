@@ -76,14 +76,21 @@ r12 = Report.create!(user:u3,event:e2,motive:"This pink thinks piscola is with w
 c11 = Comment.create!(description:"Bring it on Chuck",event:e1,user:u3)
 c12 = Comment.create!(description:"I'll win win this time",event:e1,user:u2)
 c11.comments << c12  #C12 is the reply comment of c11
-
 #this are comments separated
 c21 = Comment.create!(description:"This is a crime!",event:e2,user:u1)
-c22 = Comment.create!(description:"Why do you do this?",event:e2,user:u5)
+c22 = Comment.create!(description:"Why do you do this?",event:e2,user:u5)  # line 80 and 81 are separated comments
 c23 = Comment.create!(description:"The Piscola is with Black you moron",event:e2,user:u2)
 c24 = Comment.create!(description:"what a waste of pisco",event:e2,user:u3)
 c23.comments << c24 # this is a reply to a comment
 c25 = Comment.create!(description:"Wow, i agree with you!",event:e2,user:u2)
 c24.comments << c25  # this is a reply of a replay of a comment... it is also a comment
 
+#MAILBOX
+mb1 = MailBox.create!(user:u1)
+mb2 = MailBox.create!(user:u2)
+mb3 = MailBox.create!(user:u3)
+mb4 = MailBox.create!(user:u4)
+mb5 = MailBox.create!(user:u5)
 
+ib1 = InboxMessage.create!(mailbox:mb2,message:"1v1 in the Code Challenge")
+ib2 = InboxMessage.create!(mailbox:mb3,message:"It´s on!")
