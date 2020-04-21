@@ -3,6 +3,14 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
+# Notes
+ To have a clean database, please do the following:
+ 
+ * rake db:drop
+ * rake db:create
+ * rake db:migrate
+ * rake db:seed
+
 # Queries 
 
 ## You can use the line command:  rake db:model_queries, they are all done there
