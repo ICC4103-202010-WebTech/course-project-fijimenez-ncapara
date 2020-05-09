@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+  <tr>
+    <th colspan="7"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td> Name</td>
+      <td> Start Date</td>
+      <td> Description</td>
+      <td> minVotes</td>
+      <td> assistants</td>
+      <td> public</td>
+    </tr>
+    <tr>
+      <td><%= @event.name %></td>
+      <td><%= @event.start_date %></td>
+      <td><%= @event.description %></td>
+      <td><%= @event.minVotes %></td>
+      <td><%= @event.assistants %></td>
+      <td><%= @event.public %></td>
+      <td><%= link_to 'Edit', edit_event_path(@event) %> |
+        <%= link_to 'Back', events_path %></td>
+    </tr>
+  </tbody>
+</table>
