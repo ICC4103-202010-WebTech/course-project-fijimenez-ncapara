@@ -1,0 +1,14 @@
+<h1>This is my app</h1>
+
+<table>
+  <tr>
+    <th>email</th>
+    <th>password</th>
+  </tr>
+  <%@users.each do |v|%>
+    <tr>
+      <td><%=v.email %></td>
+      <td><%=v.password %></td>
+    </tr>
+  <%end%>
+</table>
