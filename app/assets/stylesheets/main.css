@@ -4,6 +4,10 @@ html, body {
     padding: 0;
     margin: 0;
 }
+header{
+    background: darkred;  /* When you use for any reason a header, it will have this background */
+}
+
 
 body {
     display: flex;
@@ -11,13 +15,17 @@ body {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-a {
-    color: darkgoldenrod;
+a { /* Every 'a' will have this characteristics, and as FJJI semms, every clickable thing  */
+    color: darkred;
     text-decoration: none;
+    font-size: x-large;
+    font-family: Trebuchet, sans-serif;
+    font-weight: bold;
+    font-style: italic;
 }
 
 a:hover {
-    color: crimson;
+    color: darkorange;
 }
 
 header {
@@ -54,7 +62,7 @@ ul#navbar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;  // Colour of the bar
+    background-color: #333333;  // Colour of the bar #333333
 }
 
 
@@ -64,7 +72,7 @@ ul#navbar li {
 
 ul#navbar li a {
     display: block;
-    color: lightgray;  // The colour of the options inside the bar
+    color: 	#B22222;  // The colour of the options text inside the bar
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -72,10 +80,23 @@ ul#navbar li a {
 
 /* Change the link color to #111 (black) on hover */
 ul#navbar li a:hover {
-    background-color: #111; // Colour when seleceted
+    background-color: #111; /* the background when the selection is mouse-focused */
 }
 
 td,th {
     padding: 0.2em;
     text-align: left;
+}
+
+cus{
+    color: gold;
+    text-decoration: none;
+    font-size: x-large;
+    font-family: Trebuchet, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+cus:hover {
+    color: darkorange;
 }

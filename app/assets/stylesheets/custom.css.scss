@@ -1,8 +1,6 @@
 @import 'bootstrap/dist/css/bootstrap';
 .navbar {
-  color: black;
-    background: black;
-    //background-color: #FDF6EA !important;
+    background-color: #FDF6EA !important;
 
 }
 
@@ -17,7 +15,16 @@
 
 
 h1 {
+    color: 	#111111;  // All the H1 will be in this color, but it will be overwritten if other html tag is applied
+}
 
-    color: crimson;
+body{
+  background: dimgrey;  // This makes all the background to change  it
+}
 
+enchance{ /* If put inside another html tag, will get bigger font*/
+  font-size: larger;
+  color: darkred;
+  font-style: italic;
+  font-weight: bold;
 }
