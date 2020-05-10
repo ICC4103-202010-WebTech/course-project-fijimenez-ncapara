@@ -12,12 +12,12 @@ body {
 }
 
 a {
-    color: #ff5a19;
+    color: darkgoldenrod;
     text-decoration: none;
 }
 
 a:hover {
-    color: #ff2121;
+    color: crimson;
 }
 
 header {
@@ -33,7 +33,7 @@ div#container {
 
 aside#customer_info {
     width: 20%;
-    background-color: #f0f0f0;
+    background-color: darkred;
     padding: 1em;
 }
 
@@ -43,8 +43,8 @@ main {
 }
 
 footer {
-    color: white;
-    background: #333;
+    color: crimson;
+    background: #DC143C;
     padding: 1em;
     height: 6em;
 }
@@ -54,7 +54,7 @@ ul#navbar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #333;  // Colour of the bar
 }
 
 
@@ -64,7 +64,7 @@ ul#navbar li {
 
 ul#navbar li a {
     display: block;
-    color: white;
+    color: lightgray;  // The colour of the options inside the bar
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -72,7 +72,7 @@ ul#navbar li a {
 
 /* Change the link color to #111 (black) on hover */
 ul#navbar li a:hover {
-    background-color: #111;
+    background-color: #111; // Colour when seleceted
 }
 
 td,th {
