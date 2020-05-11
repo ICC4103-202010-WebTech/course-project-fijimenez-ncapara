@@ -23,3 +23,25 @@
   </tr>
   </tbody>
 </table>
+
+<table>
+  <tr>Events i have commented</tr>
+  <%@events.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<table>
+  <tr>My written comments/reply to those events</tr>
+  <td>Description</td>
+  <td>Event id</td>
+  <%@comments.each do |v|%>
+    <tr>
+      <td><%= v.description%></td>
+      <td><%=v.event_id %></td>
+    </tr>
+  <%end %>
+</table>
