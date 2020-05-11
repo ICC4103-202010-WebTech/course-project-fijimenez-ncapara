@@ -13,6 +13,7 @@
     <td> reply_id</td>
     <td> user_id</td>
     <td> event_id</td>
+    <td> comment_id</td>
   </tr>
   <%@comments.each do |v|%>
   <tr>
@@ -20,8 +21,8 @@
     <td><%= v.reply_id %></td>
     <td><%= v.user_id %></td>
     <td><%= v.event_id %></td>
-    <td><%= link_to 'Edit', edit_comment_path(v) %> |
-      <%= link_to 'Back', events_path %></td>
+    <td><%= v.id %></td>
+    <td><%= link_to 'Back', "http://localhost:3000" %></td>
   </tr>
     <%end %>
   </tbody>

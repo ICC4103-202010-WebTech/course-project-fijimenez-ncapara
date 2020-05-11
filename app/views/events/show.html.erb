@@ -30,7 +30,10 @@
 
 <table>
   <tr>Comments</tr>
-  <tr>
-    <td><%=@comments %></td>
+  <%@comments.each do |v|%>
+    <tr>
+      <td><%= v%></td>
+      <td><%= link_to 'reply', new_comment_path(@event) %></td>
   </tr>
+    <%end %>
 </table>
