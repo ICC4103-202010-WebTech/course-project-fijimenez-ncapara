@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, defaults: { format: :html }
-  resources :events, defaults: { format: :html }
+  resources :events, defaults: { format: :html } do
+    resources :comments, defaults: { format: :html }
+  end
   resources :comments, defaults: { format: :html }
 
 end
