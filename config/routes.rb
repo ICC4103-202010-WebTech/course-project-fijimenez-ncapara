@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :mail_boxes, defaults: { format: :html} do
       resources :inbox_messages, defaults: { format: :html}
     end
-    resources :organization_files, defaults: { format: :html }
+    resources :subscriptions, defaults: { format: :html }
   end
   resources :events, defaults: { format: :html } do
     resources :comments, defaults: { format: :html }
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :reports, defaults: { format: :html}
   resources :organizations, defaults: { format: :html } do
     resources :organization_files, defaults: { format: :html }
+    resources :subscriptions, defaults: { format: :html }
   end
   resources :subscriptions, defaults: { format: :html }
 

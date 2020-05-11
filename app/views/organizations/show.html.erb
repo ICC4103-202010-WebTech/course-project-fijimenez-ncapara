@@ -1,4 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Organization: <%= @organization.name %></h1>
+
+<table>
+  <th>Members: </th>
+  <%@users.each do |v|%>
+    <tr>
+      <td><%= v.name%></td>
+    </tr>
+  <%end %>
+</table>
+
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>

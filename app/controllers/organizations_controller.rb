@@ -10,6 +10,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations/1
   # GET /organizations/1.json
   def show
+    @users = User.joins(:organizations).where(organizations: {id:params[:id]})
   end
 
   # GET /organizations/new
