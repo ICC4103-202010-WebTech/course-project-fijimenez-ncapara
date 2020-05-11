@@ -1,0 +1,17 @@
+<%= form_with(model: vote_date, local: true) do |form| %>
+  <% if vote_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vote_date.errors.count, "error") %> prohibited this vote_date from being saved:</h2>
+
+      <ul>
+        <% vote_date.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
