@@ -1,14 +1,14 @@
-<h1><enchance>Esta muestra es temporal</enchance></h1>
 <!-- comments, thats how are done -->
 <table>
   <tr>
-    <th>email</th>
-    <th>password</th>
+    <th>Name</th>
+    <th>Description</th>
   </tr>
-  <%@users.each do |v|%>
+  <%@events.each do |v|%>
     <tr>
-      <td><%=v.email %></td>
-      <td><%=v.password %></td>
+      <td><%=v.name %></td>
+      <td><%=v.description %></td>
+      <td><%= link_to 'Add Comment', new_comment_url %></td>
     </tr>
   <%end%>
 </table>

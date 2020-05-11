@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :users, defaults: { format: :html }
   resources :events, defaults: { format: :html }
+  resources :comments, defaults: { format: :html }
+
 end
