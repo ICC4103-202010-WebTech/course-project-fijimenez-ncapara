@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<h1> Comments of the Event: "<%=@event[0] %>" </h1>
+
+<br>
 
 <table>
   <thead>
@@ -9,18 +12,16 @@
 
   <tbody>
   <tr>
-    <td> description</td>
-    <td> reply_id</td>
-    <td> user_id</td>
-    <td> event_id</td>
-    <td> comment_id</td>
+    <th> description</th>
+    <th> reply_id</th>
+    <th> event_id</th>
+    <th> comment_id</th>
   </tr>
   <%@comments.each do |v|%>
   <tr>
     <td><%= v.description %></td>
-    <td><%= v.reply_id %></td>
-    <td><%= v.user_id %></td>
-    <td><%= v.event_id %></td>
+    <td><%= v.reply %></td>
+    <td><%= v.user.name %></td>
     <td><%= v.id %></td>
     <td><%= link_to 'Back', "http://localhost:3000" %></td>
   </tr>

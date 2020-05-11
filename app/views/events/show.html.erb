@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<h1>Event: <%= @event.name %></h1>
 <table>
   <thead>
   <tr>
@@ -8,15 +9,14 @@
 
   <tbody>
     <tr>
-      <td> Name</td>
-      <td> Start Date</td>
-      <td> Description</td>
-      <td> minVotes</td>
-      <td> assistants</td>
-      <td> public</td>
+      <th> Event Date</th>
+      <th> Description</th>
+      <th> Minimal votes needed</th>
+      <th> Assistants</th>
+      <th> Public?</th>
+      <th> Optiond</th>
     </tr>
     <tr>
-      <td><%= @event.name %></td>
       <td><%= @event.start_date %></td>
       <td><%= @event.description %></td>
       <td><%= @event.minVotes %></td>
@@ -28,8 +28,12 @@
   </tbody>
 </table>
 
+<br>
+<br>
+
 <table>
-  <tr>Comments</tr>
+  <th>Comments: </th>
+  <th>Leave a Reply?</th>
   <%@comments.each do |v|%>
     <tr>
       <td><%= v%></td>

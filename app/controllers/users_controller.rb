@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @comments = Comment.joins(:user).where(users: {id:params[:id]})
     @events = Event.joins(:user).where(users: {id:params[:id]})
+
   end
 
   # GET /users/new

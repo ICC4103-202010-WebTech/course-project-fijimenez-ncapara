@@ -2,20 +2,19 @@
 <table>
   <thead>
   <tr>
-    <th colspan="5"></th>
+    <th colspan="4"></th>
   </tr>
   </thead>
 
   <tbody>
+  <h1>Profile of <%=@user.name %></h1>
   <tr>
     <th> Email</th>
-    <th> Name</th>
     <th> Location</th>
     <th> Biography</th>
   </tr>
   <tr>
     <td><%= @user.email %></td>
-    <td><%= @user.name %></td>
     <td><%= @user.location %></td>
     <td><%= @user.bio %></td>
     <td><%= link_to 'Edit', edit_user_path(@user) %> |
@@ -24,24 +23,33 @@
   </tbody>
 </table>
 
+<br>
+
 <table>
-  <tr>Events i have commented</tr>
+  <h3>Events that <%=@user.name %> has created:</h3>
+  <th> Name</th>
   <%@events.each do |e| %>
     <tr>
       <td><%= e.name %></td>
+      <td><%= link_to 'Go To Event', e %> </td>
     </tr>
   <% end %>
 </table>
 
+<br>
+<br>
 
 <table>
-  <tr>My written comments/reply to those events</tr>
-  <td>Description</td>
-  <td>Event id</td>
+  <tbody>
+  <h3>My written comments or replies to any events</h3>
+  <th>Description</th>
+  <th>Event</th>
   <%@comments.each do |v|%>
     <tr>
       <td><%= v.description%></td>
-      <td><%=v.event_id %></td>
+      <td><%= v.event.name %></td>
+      <td><%= link_to 'Go To Event', v.event %> </td>
     </tr>
+    </tbody>
   <%end %>
 </table>
