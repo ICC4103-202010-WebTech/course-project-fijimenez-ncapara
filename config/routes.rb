@@ -28,5 +28,3 @@ Rails.application.routes.draw do
   resources :subscriptions, defaults: { format: :html }
 
 end
-
-#still missing resources for vote_dates
