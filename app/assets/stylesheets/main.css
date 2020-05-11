@@ -62,7 +62,7 @@ ul#navbar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;  // Colour of the bar #333333
+    background-color: #333333;  /* Colour of the bar #333333  */
 }
 
 
@@ -72,7 +72,7 @@ ul#navbar li {
 
 ul#navbar li a {
     display: block;
-    color: 	#B22222;  // The colour of the options text inside the bar
+    color: 	#B22222;  /* The colour of the options text inside the bar */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

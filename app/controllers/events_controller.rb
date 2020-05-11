@@ -11,7 +11,6 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @comments = Comment.joins(:event).where(events: {id:params[:id]}).map{|x| x.description}
-
   end
 
   # GET /events/new

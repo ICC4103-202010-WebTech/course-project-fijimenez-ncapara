@@ -3,17 +3,30 @@
 <h1>Current Events</h1>
 <!-- comments, thats how are done -->
 <br>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <th>Name</th>
+    </div>
+    <div class="col-sm">
+      <th>Description</th>
+    </div>
+    <div class="col-sm">
+      <th>Options</th>
+    </div>
+  </div>
   <%@events.each do |v|%>
-    <tr>
+  <div class="row">
+    <div class="col-sm">
       <td><%=v.name %></td>
+    </div>
+    <div class="col-sm">
       <td><%=v.description %></td>
+    </div>
+    <div class="col-sm">
       <td><%= link_to 'Show Comments', comment_path(v) %></td>
-    </tr>
-  <%end%>
-</table>
+    </div>
+  </div>
+    <%end%>
+</div>
+
