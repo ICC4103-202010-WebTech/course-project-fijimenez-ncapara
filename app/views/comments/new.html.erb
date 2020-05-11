@@ -1,5 +1,10 @@
 <h1>New Comment</h1>
 
+<form method="post">
+  <label for="cdescription">Comment:</label><br>
+  <input type="text" name="cdescription" id="cdescription" value="" placeholder="comment description"><br>
+</form>
+
 <%= render 'form', comment: @comment %>
 
 <%= link_to 'Back', "http://localhost:3000" %>

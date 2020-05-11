@@ -1,5 +1,15 @@
 <h1>New Event</h1>
 
+<form method="post">
+  <label for="ename">Name:</label><br>
+  <input type="text" name="ename" id="ename" value="" placeholder="EventName"><br>
+  <label for="edescription">Description</label><br>
+  <input type="text" name="edescription" id="edescription" value="" placeholder="Description"><br>
+  <label for="edate">Date:</label><br>
+  <input type="date" name="edate" id="edate" value="" placeholder="Event Date"><br>
+
+</form>
+
 <%= render 'form', event: @event %>
 
 <%= link_to 'Back', events_path %>
