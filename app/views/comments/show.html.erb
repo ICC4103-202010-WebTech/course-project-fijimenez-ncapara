@@ -12,17 +12,18 @@
 
   <tbody>
   <tr>
-    <th> description</th>
-    <th> reply_id</th>
-    <th> event_id</th>
-    <th> comment_id</th>
+    <th> N</th>
+    <th> Comment</th>
+    <th> replying to</th>
+    <th> Comment Creator</th>
   </tr>
   <%@comments.each do |v|%>
   <tr>
-    <td><%= v.description %></td>
-    <td><%= v.reply %></td>
-    <td><%= v.user.name %></td>
     <td><%= v.id %></td>
+    <td><%= v.description %></td>
+    <td><%= v.reply_id %></td>
+    <td><%= v.user.name %></td>
+
     <td><%= link_to 'Back', "http://localhost:3000" %></td>
   </tr>
     <%end %>
