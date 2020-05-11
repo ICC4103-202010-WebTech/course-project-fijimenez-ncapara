@@ -1,43 +1,88 @@
 <p id="notice"><%= notice %></p>
 <h1>Event: <%= @event.name %></h1>
-<table>
-  <thead>
-  <tr>
-    <th colspan="7"></th>
-  </tr>
-  </thead>
 
-  <tbody>
-    <tr>
-      <th> Event Date</th>
-      <th> Description</th>
-      <th> Minimal votes needed</th>
-      <th> Assistants</th>
-      <th> Public?</th>
-      <th> Options</th>
-    </tr>
-    <tr>
-      <td><%= @event.start_date %></td>
-      <td><%= @event.description %></td>
-      <td><%= @event.minVotes %></td>
-      <td><%= @event.assistants %></td>
-      <td><%= @event.public %></td>
-      <td><%= link_to 'Edit', edit_event_path(@event) %> |
-        <%= link_to 'Back', events_path %></td>
-    </tr>
-  </tbody>
-</table>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <th><h5>Event Date</h5> </th>
+    </div>
+    <div class="col-sm">
+      <th><h5>Description</h5> </th>
+    </div>
+    <div class="col-sm">
+      <th><h5>Min votes needed</h5> </th>
+    </div>
+    <div class="col-sm">
+      <th><h5>Assistants</h5> </th>
+    </div>
+    <div class="col-sm">
+      <th><h5>Public?</h5> </th>
+    </div>
+    <div class="col-sm">
+      <th><h5>Options</h5> </th>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-sm">
+        <td><%= @event.start_date %></td>
+      </div>
+      <div class="col-sm">
+        <td><%= @event.description %></td>
+      </div>
+      <div class="col-sm">
+        <td><%= @event.minVotes %></td>
+      </div>
+      <div class="col-sm">
+        <td><%= @event.assistants %></td>
+      </div>
+      <div class="col-sm">
+        <td><%= @event.public %></td>
+      </div>
+      <div class="col-sm">
+        <td>
+          <%= link_to 'Edit', edit_event_path(@event) %>  |
+          <%= link_to 'Back', events_path %>
+        </td>
+      </div>
+    </div>
+</div>
+
 
 <br>
 <br>
 
-<table>
-  <th>Comments: </th>
-  <th>Leave a Reply?</th>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <th><h5>Comments: </h5> </th>
+    </div>
+    <div class="col-sm">
+      <th><h5>Leave a Reply?</h5></th>
+    </div>
+  </div>
   <%@comments.each do |v|%>
-    <tr>
-      <td><%= v%></td>
-      <td><%= link_to 'reply', new_comment_path(@event) %></td>
-  </tr>
-    <%end %>
-</table>
+    <div class="row">
+      <div class="col-sm">
+        <td><%= v%></td>
+      </div>
+      <div class="col-sm">
+        <td><%= link_to 'reply', new_comment_path(@event) %></td>
+      </div>
+    </div>
+  <%end%>
+</div>
+
+<br>
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <h5>Add user to event</h5>
+  </div>
+  <div class="row">
+    <%= link_to 'New User', new_user_path %>
+  </div>
+</div>
