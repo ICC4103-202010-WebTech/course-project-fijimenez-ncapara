@@ -18,11 +18,13 @@ We have implemented:
         -   The users on the app
         -   All the events that are in the history of the event
         -   The Organizations
+    • API v1 for JSON resources
     
 ### •   Summary of features required in the assignment but pending.
 
     • The comments of the events have their replies, but they appears as a reference to the comment they are replying to
        in the column "replying to" referencing to the column "N"
+    • Forbidden access, all is seem as an administrator
 
 ### • API Tests, which should include links to your Postman collection containing tests for your APIs.
 
