@@ -3,30 +3,32 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   namespace :api, defaults: { format: :json } do
-    resources :users do
-      resources :mail_boxes do
-        resources :inbox_messages
+    namespace :v1 do
+      resources :users do
+        resources :mail_boxes do
+          resources :inbox_messages
+        end
+        resources :subscriptions
       end
-      resources :subscriptions
-    end
-    resources :events do
-      resources :comments
-      resources :date_options do
+      resources :events do
+        resources :comments
+        resources :date_options do
+          resources :vote_dates
+        end
+        resources :event_files
+        resources :notifications
+      end
+      resources :event_invitations do
         resources :vote_dates
       end
-      resources :event_files
-      resources :notifications
-    end
-    resources :event_invitations do
-      resources :vote_dates
-    end
-    resources :comments
-    resources :reports
-    resources :organizations do
-      resources :organization_files
+      resources :comments
+      resources :reports
+      resources :organizations do
+        resources :organization_files
+        resources :subscriptions
+      end
       resources :subscriptions
     end
-    resources :subscriptions
   end
 
 
