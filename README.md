@@ -3,10 +3,6 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
-# Nota para el team, avance de noche 10 es de esta pagina 
-https://www.mashrurhossain.com/blog/rails6bootstrap4
-
-que aparece en el PDF
 # Proyect 2 
 
 ### •   Summary of implemented features.
@@ -28,7 +24,7 @@ We have implemented:
     • The comments of the events have their replies, but they appears as a reference to the comment they are replying to
     in the  column "replying to" referencing to the column "N"
 
-###• API Tests, which should include links to your Postman collection containing tests for your APIs.
+### • API Tests, which should include links to your Postman collection containing tests for your APIs.
 
     • this
 
