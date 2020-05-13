@@ -19,6 +19,8 @@ We have implemented:
         -   All the events that are in the history of the event
         -   The Organizations
     • API v1 for JSON resources
+    • We have instance to create Events and Users, but no one is implemented as the assigment asked to be read Only
+     
     
 ### •   Summary of features required in the assignment but pending.
 
