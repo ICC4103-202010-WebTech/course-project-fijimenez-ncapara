@@ -67,7 +67,7 @@ ul#navbar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333333;  /* Colour of the bar #333333  */
+    background-color: #3e0000;  /* Colour of the bar #333333  */
 }
 
 
@@ -85,7 +85,7 @@ ul#navbar li a {
 
 /* Change the link color to #111 (black) on hover */
 ul#navbar li a:hover {
-    background-color: #111; /* the background when the selection is mouse-focused */
+    background-color: #250000; /* the background when the selection is mouse-focused */
 }
 
 td,th {
@@ -100,6 +100,9 @@ cus{
     font-family: Trebuchet, sans-serif;
     font-weight: bold;
     font-style: italic;
+    /*position: absolute;
+    left: 50%;  If wanted full to the left */
+
 }
 
 cus:hover {
