@@ -11,9 +11,22 @@ que aparece en el PDF
 
 ### •   Summary of implemented features.
 
-###•   Summary of features required in the assignment but pending.
+We have implemented:
+
+    • Bootstrap
+    • The css y scss files (with comments in it to guide us) 
+    • The application.html ( with its header, nav and footer)
+    • A homepage
+    • In banner, we implemented links to:
+        - 
+    
+### •   Summary of features required in the assignment but pending.
+
+    • this
 
 ###• API Tests, which should include links to your Postman collection containing tests for your APIs.
+
+    • this
 
 # Proyect 1.2
 

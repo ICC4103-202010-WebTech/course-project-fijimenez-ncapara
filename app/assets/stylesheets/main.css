@@ -54,7 +54,12 @@ footer {
     color: gold;
     background: darkred;
     padding: 1em;
-    height: 6em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
 }
 
 ul#navbar {
