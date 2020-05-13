@@ -3,7 +3,7 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
-# Proyect 2 
+# Project 2 
 
 ### •   Summary of implemented features.
 
