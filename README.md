@@ -34,7 +34,7 @@ Postman Link
 
    https://www.getpostman.com/collections/f90b3e4668efd6bdf015
 
-# Proyect 1.2
+# Project 1.2
 
 ## Notes
  To have a clean database, please do the following:
