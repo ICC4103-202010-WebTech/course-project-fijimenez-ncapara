@@ -26,7 +26,9 @@ We have implemented:
 
 ### • API Tests, which should include links to your Postman collection containing tests for your APIs.
 
-    • this
+Postman Link
+
+   https://www.getpostman.com/collections/f90b3e4668efd6bdf015
 
 # Proyect 1.2
 
