@@ -16,13 +16,17 @@ We have implemented:
     • Bootstrap
     • The css y scss files (with comments in it to guide us) 
     • The application.html ( with its header, nav and footer)
-    • A homepage
+    • A homepage witch haves top 5 events (in our case, we have 3 events, so it shows them all)
+        -   it haves a link to see the comments of the replies
     • In banner, we implemented links to:
-        - 
+        -   The users on the app
+        -   All the events that are in the history of the event
+        -   The Organizations
     
 ### •   Summary of features required in the assignment but pending.
 
-    • this
+    • The comments of the events have their replies, but they appears as a reference to the comment they are replying to
+    in the  column "replying to" referencing to the column "N"
 
 ###• API Tests, which should include links to your Postman collection containing tests for your APIs.
 
