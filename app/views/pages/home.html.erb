@@ -3,30 +3,8 @@
 <h1>Current Events</h1>
 <!-- comments, thats how are done -->
 <br>
-<div class="container">
   <div class="row">
-    <div class="col-sm">
-      <th>Name</th>
-    </div>
-    <div class="col-sm">
-      <th>Description</th>
-    </div>
-    <div class="col-sm">
-      <th>Options</th>
-    </div>
+    <% @events.each do |event| %>
+      <%= render partial: 'events/event_tile', locals: { event: event } %>
+    <% end %>
   </div>
-  <%@events.each do |v|%>
-  <div class="row">
-    <div class="col-sm">
-      <td><%=v.name %></td>
-    </div>
-    <div class="col-sm">
-      <td><%=v.description %></td>
-    </div>
-    <div class="col-sm">
-      <td><%= link_to 'Show Comments', comment_path(v) %></td>
-    </div>
-  </div>
-    <%end%>
-</div>
-

@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_024024) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.date "start_date"
+    t.datetime "start_date"
     t.string "description"
     t.integer "minVotes"
     t.integer "assistants"
