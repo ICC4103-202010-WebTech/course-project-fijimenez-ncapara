@@ -1,11 +1,12 @@
-<h1>New User</h1>
-
-<form method="post">
-  <label for="uname">Email:</label><br>
-  <input type="text" email="uname" id="uname" value="" placeholder="UserEmail"><br>
-  <label for="upassword">Password</label><br>
-  <input type="text" password="upassword" id="upassword" value="" placeholder="UserPassword">
-</form>
-
-<%= render 'form', user: @user %>
+<div class="row ml-0 mt-3">
+  <h2>New User</h2>
+</div>
+<div class="row ml-0 mt-2">
+  <p>Please enter the required information to become a new User:</p>
+</div>
+<%= render partial: "form",
+           locals: {
+               event: @user,
+               submit_btn_text: "Create"
+           } %>
 <%= link_to 'Back', users_path %>
