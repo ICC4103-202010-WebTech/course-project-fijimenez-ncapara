@@ -1,6 +1,10 @@
 <h1>Editing User</h1>
 
-<%= render 'form', user: @user %>
+<%= render partial: "form",
+           locals: {
+               event: @user,
+               submit_btn_text: "Update"
+           } %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
