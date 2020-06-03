@@ -1,6 +1,10 @@
 <div class="col-md-4">
   <div class="card mb-4 shadow-sm">
-    <%= link_to image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef"), url_for(event) %>
+    <% if event.flyer.attached? %>
+      <%= link_to image_tag(event.flyer,class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef"), url_for(event) %>
+    <%else %>
+      <%= link_to image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef"), url_for(event) %>
+    <%end %>
     <div class="card-body">
       <p class="card-text"><%= link_to event.name, event %></p>
       <p class="card-text"><%= event.start_date %></p>

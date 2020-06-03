@@ -1,17 +1,13 @@
-<h1>New Event</h1>
-
-<form method="post">
-  <label for="ename">Name:</label><br>
-  <input type="text" name="ename" id="ename" value="" placeholder="EventName"><br>
-  <label for="edescription">Description</label><br>
-  <input type="text" name="edescription" id="edescription" value="" placeholder="Description"><br>
-  <label for="edate">Date:</label><br>
-  <input type="date" name="edate" id="edate" value="" placeholder="Event Date"><br>
-
-</form>
-
-<br>
-
-<%= render 'form', event: @event %>
+<div class="row ml-0 mt-3">
+  <h2>New Event</h2>
+</div>
+<div class="row ml-0 mt-2">
+  <p>Please enter the required information to create a new Event:</p>
+</div>
+<%= render partial: "form",
+           locals: {
+               event: @event,
+               submit_btn_text: "Create"
+           } %>
 
 <%= link_to 'Back', events_path %>
