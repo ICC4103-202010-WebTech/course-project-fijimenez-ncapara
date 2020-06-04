@@ -94,11 +94,23 @@ img {
 }
 
 .btn-red{
+   border: 3px solid #3e0000;
+   background: darkred;
+   color: gold !important;
+   font-weight: bold;
+   :hover{
+     background: #3e0000;
+   }
+ }
+
+.btn-gold {
   border: 3px solid #3e0000;
-  background: darkred;
-  color: gold !important;
+  background: gold;
+  color: darkred !important;
   font-weight: bold;
-  .hover{
-    background: #3e0000;
-  }
 }
+
+.btn-gold:hover{
+  background: darkgoldenrod;
+}
+
