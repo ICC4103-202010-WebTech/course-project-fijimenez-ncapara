@@ -3,40 +3,38 @@
 <h1>Users</h1>
 
 <br>
+<th> <%= link_to 'New User', new_user_path %> </th>
 
-<div class="container">
+<tbody>
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
   <div class="row">
-    <div class="col-sm">
-      <th><h3>User Names</h3></th>
-    </div>
-    <div class="col-sm">
-      <th><h3>Emails</h3></th>
-    </div>
-    <div class="col-sm">
-      <th><h3>Options</h3></th>
-    </div>
-  </div>
-  <% @users.each do |user| %>
-    <div class="row">
-      <div class="col-sm">
-        <td><%=user.name %></td>
-      </div>
-      <div class="col-sm">
-        <td><%=user.email %></td>
-      </div>
-      <div class="col-sm">
-        <td>
-          <%= link_to 'Show', user %> |
-          <%= link_to 'Edit', edit_user_path(user) %> |
-          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </div>
-    </div>
+  <% @users.each_with_index do |user,i| %>
+      <div class="col-lg-4 table-bordered table-active">
+        <p></p>
+        <img class="rounded-circle align-content-center" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <h2><%=user.name %></h2>
+        <h4><%=user.email %></h4>
+        <div class="btn btn-group-toggle">
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1"> <%= link_to 'Show', user %>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2"> <%= link_to 'Edit', edit_user_path(user) %>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </label>
+        </div>
+        </p>
+      </div><!-- /.col-lg-4 -->
   <%end %>
-  <div class="row">
-    <%= link_to 'New User', new_user_path %>
-  </div>
+</div><!-- /.row -->
 </div>
+</tbody>
+
+
 
 
 

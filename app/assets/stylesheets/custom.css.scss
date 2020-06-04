@@ -12,8 +12,23 @@
 
 }
 
+.table-active{
+  color: black;
+  background: goldenrod;
+  font-weight: bold;
+}
 
+.table-red{
+  background: darkred;
+  color: gold;
+  font-weight: bold;
+}
 
+.table-gold{
+  background: gold;
+  color: darkred;
+  font-weight: bold;
+}
 h1 {
     color: 	#111111;  // All the H1 will be in this color, but it will be overwritten if other html tag is applied
 }

@@ -1,57 +1,65 @@
 <p id="notice"><%= notice %></p>
-<table>
-  <thead>
-  <tr>
-    <th colspan="4"></th>
-  </tr>
-  </thead>
 
+<table class="table table-red">
   <tbody>
   <h1>Profile of <%=@user.name %></h1>
   <tr>
-    <th> Email</th>
-    <th> Location</th>
-    <th> Biography</th>
+    <th scope="col"> Email</th>
+    <th scope="col"> Location</th>
+    <th scope="col"> Biography</th>
   </tr>
   <tr>
     <td><%= @user.email %></td>
     <td><%= @user.location %></td>
     <td><%= @user.bio %></td>
-    <td><%= link_to 'Edit', edit_user_path(@user) %> |
-      <%= link_to 'Back', users_path %></td>
   </tr>
   </tbody>
 </table>
+<td class="btn btn-group-toggle">
+  <label class="btn table-gold">
+    <%= link_to 'Edit User', edit_user_path(@user) %>
+  </label>
+  <label class="btn table-gold">
+    <%= link_to 'Back', users_path %>
+  </label>
+</td>
 
 <br>
-
-<table>
-  <h3>Events that <%=@user.name %> has created:</h3>
-  <th> Name</th>
+<p><h2>Events that <%=@user.name %> has created:</h2></p>
+<table class="table table-red">
+  <th scope="col"> Event Name</th>
+  <th scope="col"> Options</th>
   <%@events.each do |e| %>
     <tr>
       <td><%= e.name %></td>
-      <td><%= link_to 'Go To Event', e %> </td>
+      <td>
+        <label class="btn-sm table-gold">
+          <%= link_to 'Go To Event', e%>
+        </label>
+      </td>
     </tr>
-  <% end %>
+<% end %>
 </table>
 
 <br>
 <br>
 
-<table>
-  <tbody>
-  <h3>My written comments or replies to any events</h3>
-  <th>Description</th>
-  <th>Event</th>
+<p><h3>My written comments or replies to any events</h3></p>
+<table class="table table-red">
+  <th scope="col"> Description</th>
+  <th scope="col"> Event</th>
+  <th scope="col"> Options</th>
   <%@comments.each do |v|%>
     <tr>
       <td><%= v.description%></td>
       <td><%= v.event.name %></td>
-      <td><%= link_to 'Go To Event', v.event %> </td>
+      <td>
+        <label class="btn-sm table-gold">
+          <%= link_to 'Go To Event', v.event %>
+        </label>
+      </td>
     </tr>
-    </tbody>
-  <%end %>
+  <% end %>
 </table>
 
 <%= 'Go To Mail box' %>   <!-- #dejar asi porque no logro pasarle usuario para abrirlo especificamente -->

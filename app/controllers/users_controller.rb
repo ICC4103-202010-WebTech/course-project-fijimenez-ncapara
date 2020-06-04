@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @comments = Comment.joins(:user).where(users: {id:params[:id]})
-    @events = Event.joins(:user)
+    @events = Event.joins(:user).where(users: {id:params[:id]})
 
   end
 
