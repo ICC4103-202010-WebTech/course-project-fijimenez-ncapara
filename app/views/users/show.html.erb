@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<table class="table table-red">
+<table class="table table-darkred">
   <tbody>
   <h1>Profile of <%=@user.name %></h1>
   <tr>
@@ -15,6 +15,7 @@
   </tr>
   </tbody>
 </table>
+<table class="table-darkred">
 <td class="btn btn-group-toggle">
   <label class="btn table-gold">
     <%= link_to 'Edit User', edit_user_path(@user) %>
@@ -23,10 +24,10 @@
     <%= link_to 'Back', users_path %>
   </label>
 </td>
-
+</table>
 <br>
 <p><h2>Events that <%=@user.name %> has created:</h2></p>
-<table class="table table-red">
+<table class="table table-darkred">
   <th scope="col"> Event Name</th>
   <th scope="col"> Options</th>
   <%@events.each do |e| %>
@@ -45,7 +46,7 @@
 <br>
 
 <p><h3>My written comments or replies to any events</h3></p>
-<table class="table table-red">
+<table class="table table-darkred">
   <th scope="col"> Description</th>
   <th scope="col"> Event</th>
   <th scope="col"> Options</th>
