@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<p id="notice" class ="table-gold"><%= notice %></p>
+<% if @user.photo.attached? %>
+  <img class="img mx-auto d-block" data-toggle="modal" data-target="#exampleModalCenter"
+  <%= image_tag @user.photo,class: "image", width: "200", height: "auto", id:"img"%>
+<%end %>
+</img>
 <table class="table table-darkred">
   <tbody>
   <h1>Profile of <%=@user.name %></h1>

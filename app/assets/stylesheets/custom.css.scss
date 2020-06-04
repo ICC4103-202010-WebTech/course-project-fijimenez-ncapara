@@ -90,4 +90,15 @@ enchance{ /* If put inside another html tag, will get bigger font*/
 
 img {
   border: 5px solid darkred;
+
+}
+
+.btn-red{
+  border: 3px solid #3e0000;
+  background: darkred;
+  color: gold !important;
+  font-weight: bold;
+  .hover{
+    background: #3e0000;
+  }
 }

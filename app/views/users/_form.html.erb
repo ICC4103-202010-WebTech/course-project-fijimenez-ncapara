@@ -1,6 +1,6 @@
 <%= form_with(model: @user, local: true) do |form| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation ">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
@@ -10,30 +10,46 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group">
+  <div class = "flex-row col-auto table-darkred">
     <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control" %>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-centered">
+      <%= form.text_field :name, class: "table-gold" %>
+    </div>
     <%= form.label :email %>
-    <%= form.text_field :email, class: "form-control" %>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-centered">
+      <%= form.text_field :email, class: "table-gold" %>
+    </div>
     <%= form.label :password %>
-    <%= form.text_field :password, class: "form-control"%>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-centered">
+      <%= form.text_field :password, class: "table-gold"%>
+    </div>
     <%= form.label :location %>
-    <%= form.text_field :location, class: "form-control" %>
-  </div>
-  <div class="form-group">
+    <div class="form-group col-centered">
+      <%= form.text_field :location, class: "table-gold" %>
+    </div>
     <%= form.label :bio %>
-    <%= form.text_area :bio, class: "form-control" %>
-  </div>
-  <%= form.file_field :photo %>
-  <div class="form-group mt-2">
-    <%= form.submit submit_btn_text, class: ["btn", "btn-primary"] %>
-    <%= link_to "Back", :back, class: ["btn", "btn-secondary"] %>
+    <div class="form-group col-centered">
+      <%= form.text_area :bio, class: "table-gold" %>
+    </div>
+    <%= form.label :"Profile's Photo" %>
+    <div class="form-group col-centered">
+    <input type="file" accept="image/*" onchange="loadFile(event)">
+    <img id="output"/>
+    <script>
+        var loadFile = function(event) {
+            var output = document.getElementById('output');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+    </script>
+    </div>
+    <div class="form-group mt-2 ">
+      <p>
+      <%= form.submit submit_btn_text, class: ["btn","btn-red"] %>
+      <%= link_to "Back", :back, class: ["btn", "btn-red"] %>
+      </p>
+    </div>
   </div>
 <% end %>
-</div>
