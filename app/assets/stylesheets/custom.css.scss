@@ -1,8 +1,46 @@
 @import 'bootstrap/dist/css/bootstrap';
 .navbar {
-    background-color: #FDF6EA !important;
+    background-color: #3e0000 !important;
+  a:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+  ul:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+  li:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
 
 }
+.navbar-nav {
+  flex-direction: row;
+  background-color: #3e0000 !important;
+  a:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+  ul:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+  li:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+}
+
+.nav-link {
+  padding-right: .5rem !important;
+  padding-left: .5rem !important;
+  background-color: #3e0000 !important;
+  a:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+  ul:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+  li:hover {
+    background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  }
+}
+
 
 
 

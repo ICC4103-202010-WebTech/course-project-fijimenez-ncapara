@@ -12,14 +12,20 @@
   <header>
     <h1 style="font-size: 100%"><a href="http://localhost:3000/"><cus>WingManBook</cus></a></h1>
   </header>
-    <nav>
+    <nav class="nav navbar-nav">
       <ul id="navbar">
         <li><a href="http://localhost:3000/users"> Users</a></li>
+      </ul>
+      <ul id="navbar">
         <li><a href="http://localhost:3000/events"> Events</a></li>
+      </ul>
+      <ul id="navbar">
         <li><a href="http://localhost:3000/organizations"> Organization</a></li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
         <input id="searchbar" onkeyup="" type="text"
                name="search" placeholder="Search...">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit">  <img src="thumbnail.svg" alt="search" ></button>
       </ul>
     </nav>
     <main>
