@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_one :mail_box
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } ,uniqueness: {message: "Email already exists!!!"}
   validates :name, uniqueness: {message: "Name already exists!!"}
+
+  has_one_attached :photo
 end

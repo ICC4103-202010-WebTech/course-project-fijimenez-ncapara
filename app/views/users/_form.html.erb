@@ -30,6 +30,7 @@
     <%= form.label :bio %>
     <%= form.text_area :bio, class: "form-control" %>
   </div>
+  <%= form.file_field :photo %>
   <div class="form-group mt-2">
     <%= form.submit submit_btn_text, class: ["btn", "btn-primary"] %>
     <%= link_to "Back", :back, class: ["btn", "btn-secondary"] %>
