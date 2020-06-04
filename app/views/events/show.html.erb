@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
-<h1>Event: <%= @event.name %></h1>
+<h1 class="align-content-center">Event: <%= @event.name %></h1>
 
 <br>
+<body>
 <% if @event.flyer.attached? %>
-  <img class="img-thumbnail -file-image" data-toggle="modal" data-target="#exampleModalCenter"
-  <%= image_tag @event.flyer,class: "image", width: "400", height: "100%"  if @event.flyer.attached?%>
+  <img class="img mx-auto d-block" data-toggle="modal" data-target="#exampleModalCenter"
+  <%= image_tag @event.flyer,class: "image", width: "400", height: "auto", id:"img"  if @event.flyer.attached?%>
 <%end %>
 </img>
 <div class="container">
@@ -90,3 +91,4 @@
     <%= link_to 'New User', new_user_path %>
   </div>
 </div>
+</body>
