@@ -2,23 +2,35 @@
 
 <h1>Comments</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<tbody>
+<div class="container marketing">
 
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= link_to 'Show', comment %></td>
-        <td> <%= link_to 'Edit', comment %> </td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <!-- Three columns of text below the carousel -->
+  <div class="row">
+    <% @comments.each_with_index do |comment,i| %>
+      <div class="col-lg-4 table-bordered table-active">
+        <h4>User: <%=comment.user.name %></h4>
+        <h4>Event: <%=comment.event.name %></h4>
+        <h1><%=comment.description %></h1>
+
+        <div class="btn btn-group-toggle">
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1"><%= link_to 'Show', comment %>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2"> <%= link_to 'Edit', edit_comment_path(comment) %>
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3"> <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </label>
+        </div>
+        </p>
+      </div><!-- /.col-lg-4 -->
+    <%end %>
+  </div><!-- /.row -->
+</div>
+</tbody>
+
 
 <br>
 
