@@ -1,22 +1,10 @@
 <h1>Editing Organization</h1>
 
 <br>
-
-<div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <%= render 'form', organization: @organization %>
-      </div>
-      <div class="col-sm">
-        <td>
-          <%= link_to 'Show', @organization %>
-        </td>
-      </div>
-      <div class="col-sm">
-        <td>
-          <%= link_to 'Back', organizations_path %>
-        </td>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: "form",
+           locals: {
+               event: @organization,
+               submit_btn_text: "Update"
+           } %>
+<%= link_to 'Show', @organization %>
+<%= link_to 'Back', organizations_path %>

@@ -3,7 +3,11 @@
 <h1>Organization: <%= @organization.name %></h1>
 
 <br>
-
+<% if @organization.photo.attached? %>
+  <img class="img mx-auto d-block" data-toggle="modal" data-target="#exampleModalCenter"
+  <%= image_tag @organization.photo,class: "image", width: "400", height: "auto", id:"img"  if @organization.photo.attached?%>
+<%end %>
+</img>
 <div class="container">
   <div class="row">
     <div class="col-sm">
