@@ -35,12 +35,7 @@
           a.addEventListener('submit',function(e) {
               e.preventDefault();
               var b = document.getElementById('searchbar').value;
-              if (b === 'events' || b === 'users' || b === 'organizations'){
                   window.location.href = 'http://localhost:3000/'+b;
-              }
-              else{
-                  window.location.href = 'http://localhost:3000/';
-              }
 
           });
 
