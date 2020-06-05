@@ -4,30 +4,9 @@
 
 <br>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <th><h3>Event Name</h3></th>
-    </div>
-    <div class="col-sm">
-      <th><h3>Options</h3></th>
-    </div>
-  </div>
+<%= link_to 'New Event', new_event_path %>
+<div class="row">
   <% @events.each do |event| %>
-    <div class="row">
-      <div class="col-sm">
-        <td><%= event.name %></td>
-      </div>
-      <div class="col-sm">
-        <td>
-          <%= link_to 'Show', event%> |
-          <%= link_to 'Edit', edit_event_path(event) %> |
-          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </div>
-    </div>
-  <%end %>
-  <div class="row">
-    <%= link_to 'New Event', new_event_path %>
-  </div>
+    <%= render partial: 'events/event_tile', locals: { event: event } %>
+  <% end %>
 </div>
