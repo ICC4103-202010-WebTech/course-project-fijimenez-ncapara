@@ -4,30 +4,34 @@
 
 <br>
 
-<div class="container">
+<%= link_to 'New Organization', new_organization_path %>
+<tbody>
   <div class="row">
-    <div class="col-sm">
-      <th><h3>Organization Names</h3></th>
-    </div>
-    <div class="col-sm">
-      <th><h3>Options</h3></th>
-    </div>
-  </div>
-  <% @organizations.each do |organization| %>
-    <div class="row">
-      <div class="col-sm">
-        <td><%=organization.name %></td>
+      <% @organizations.each do |organization| %>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm table-darkred">
+          <p>
+          <% if organization.photo.attached? %>
+            <%= link_to image_tag(organization.photo,class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef"), url_for(organization) %>
+          <%else %>
+            <%= link_to image_tag("thumbnail.svg", class: "card-img-top", width: "100%", background: "#55595c", color: "#eceeef"), url_for(organization) %>
+          <%end %>
+          </p>
+          <div class="card-body">
+            <p class="card-text"><%= link_to organization.name, organization %></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group  btn-group-toggle">
+                <button type="button" class="btn btn-gold"><%= link_to "View", organization %></button>
+                <button type="button" class="btn btn-sm btn-gold"><%= link_to "Edit", edit_event_path(organization)%></button>
+                <button type="button" class="btn btn-sm btn-gold"><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              </div>
+              <!--
+              <small class="text-muted">%= "#{(event.start_date.to_date - DateTime.now.to_date).to_i} days left!" %></small>
+              -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-sm">
-        <td>
-          <%= link_to 'Show', organization %> |
-          <%= link_to 'Edit', edit_organization_path(organization) %> |
-          <%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </div>
-    </div>
-  <%end %>
-  <div class="row">
-    <%= link_to 'New Organization', new_organization_path %>
+      <%end %>
   </div>
-</div>
+</tbody>
