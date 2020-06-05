@@ -1,94 +1,53 @@
 <p id="notice"><%= notice %></p>
 <h1 class="align-content-center">Event: <%= @event.name %></h1>
 
-<br>
-<body>
+<p id="notice" class ="table-gold"><%= notice %></p>
 <% if @event.flyer.attached? %>
   <img class="img mx-auto d-block" data-toggle="modal" data-target="#exampleModalCenter"
-  <%= image_tag @event.flyer,class: "image", width: "400", height: "auto", id:"img"  if @event.flyer.attached?%>
+  <%= image_tag @event.flyer,class: "image", width: "200", height: "auto", id:"img"%>
 <%end %>
 </img>
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <th><h5>Event Date</h5> </th>
-    </div>
-    <div class="col-sm">
-      <th><h5>Description</h5> </th>
-    </div>
-    <div class="col-sm">
-      <th><h5>Min votes needed</h5> </th>
-    </div>
-    <div class="col-sm">
-      <th><h5>Assistants</h5> </th>
-    </div>
-    <div class="col-sm">
-      <th><h5>Public?</h5> </th>
-    </div>
-    <div class="col-sm">
-      <th><h5>Options</h5> </th>
-    </div>
-  </div>
-    <div class="row">
-      <div class="col-sm">
-        <td><%= @event.start_date %></td>
-      </div>
-      <div class="col-sm">
-        <td><%= @event.description %></td>
-      </div>
-      <div class="col-sm">
-        <td><%= @event.minVotes %></td>
-      </div>
-      <div class="col-sm">
-        <td><%= @event.assistants %></td>
-      </div>
-      <div class="col-sm">
-        <td><%= @event.public %></td>
-      </div>
-      <div class="col-sm">
-        <td>
-          <%= link_to 'Edit', edit_event_path(@event) %>  |
-          <%= link_to 'Back', events_path %>
-        </td>
-      </div>
-    </div>
-</div>
-
-
-<br>
+<table class="table table-darkred">
+  <tbody>
+  <h1>Profile of <%=@event.name %></h1>
+  <tr>
+    <th scope="col"> Date</th>
+    <th scope="col"> Description</th>
+    <th scope="col"> Minimal Votes</th>
+    <th scope="col"> assistants</th>
+    <th scope="col"> Is it Public?</th>
+  </tr>
+  <tr>
+    <td><%= @event.start_date %></td>
+    <td><%= @event.description %></td>
+    <td><%= @event.minVotes %></td>
+    <td><%= @event.assistants %></td>
+    <td><%= @event.public %></td>
+  </tr>
+  </tbody>
+</table>
+<table class="table-darkred">
+  <td class="btn btn-group-toggle">
+    <label class="btn table-gold">
+      <%= link_to 'Edit Event', edit_user_path(@event) %>
+    </label>
+    <label class="btn table-gold">
+      <%= link_to 'Back', users_path %>
+    </label>
+  </td>
+</table>
 <br>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <th><h5>Comments: </h5> </th>
-    </div>
-    <div class="col-sm">
-      <th><h5>Leave a Reply?</h5></th>
-    </div>
-  </div>
+<p><h3>Comments or replies to the event</h3></p>
+<table class="table table-darkred">
+  <th scope="col"> Comment</th>
+  <th scope="col"> Leave a Reply</th>
   <%@comments.each do |v|%>
-    <div class="row">
-      <div class="col-sm">
-        <td><%= v%></td>
-      </div>
-      <div class="col-sm">
-        <td><%= link_to 'reply', new_comment_path(@event) %></td>
-      </div>
-    </div>
-  <%end%>
-</div>
+    <tr>
+      <td><%= v%></td>
+      <td><%= link_to 'reply', new_comment_path(@event) %></td>
+    </tr>
+  <% end %>
+</table>
 
-<br>
-<br>
-
-
-<div class="container">
-  <div class="row">
-    <h5>Add user to event</h5>
-  </div>
-  <div class="row">
-    <%= link_to 'New User', new_user_path %>
-  </div>
-</div>
-</body>
+<%= 'Go To Mail box' %>   <!-- #dejar asi porque no logro pasarle usuario para abrirlo especificamente -->
