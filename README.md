@@ -3,6 +3,42 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
+# Project 3
+
+### • Summary of implemented features.
+
+    • System is working as admin by default
+    • Users/Profiles operation avaialable. You can view,
+        create, delete and edit users/profiles. Including
+        name, bio , location, password.
+    • View events that user created is available
+    • Organization page available, as also the ability to edit it.
+    • Events can be viewed including 
+        - title, description, location, date
+        - files
+    • You can reply and view comments in events
+    • Events have operations for create, edit, destroy working
+    • Search bar partially implemented
+        -It is possible to type events,users,organizations to redirect you into the respective page
+        -it can search also as events/1 to show event with id 1
+#bugs 
+    • Search bar input may cause page malfunctioning
+        -Routing errors if the input is different than
+        for example:
+            -users/1
+            -events/1
+            -organizations/1
+            -events
+            -users
+            -organizations
+        - the method mentioned above is searching by id
+#Pending features
+    • Vote date for events
+    • Invite guests to events
+    • public events for organization 
+    • Search events by substring title, creator(if searching by id is not considered),
+        by organization.    
+
 # Project 2 
 
 ### •   Summary of implemented features.
