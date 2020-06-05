@@ -12,8 +12,13 @@
   <div class="row">
   <% @users.each_with_index do |user,i| %>
       <div class="col-lg-4 table-bordered table-active">
-        <p></p>
-        <img class="rounded-circle align-content-center" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+        <p>
+          <% if user.photo.attached? %>
+            <%= link_to image_tag(user.photo,class: "rounded-circle card-img-top", width: "100%", height: "250", id:"img", background: "#55595c", color: "#eceeef"), url_for(user) %>
+          <%else %>
+            <%= link_to image_tag("thumbnail.svg", class: "card-img-top", width: "200", height: "100%", background: "#55595c", color: "#eceeef"), url_for(user) %>
+          <%end %>
+        </p>
         <h2><%=user.name %></h2>
         <h4><%=user.email %></h4>
         <div class="btn btn-group-toggle">
