@@ -21,6 +21,7 @@
     • Search bar partially implemented
         -It is possible to type events,users,organizations to redirect you into the respective page
         -it can search also as events/1 to show event with id 1
+        
 #bugs 
     • Search bar input may cause page malfunctioning
         -Routing errors if the input is different than:
@@ -33,6 +34,8 @@
         - the "1" mentioned above is searching by id on any of the categories
     • You can't reply and view comments in events becouse they ask for a user and event that isn't taking
     • In edit (of any kind) you can't see the photos, but they're visible once you upload the changes
+    
+    
 #Pending features
     • The CRUD operations are not woring on Events comments, due to not being selected a User
     • In User, view invited evets
