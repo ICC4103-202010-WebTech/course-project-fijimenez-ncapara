@@ -23,6 +23,7 @@
         -it can search also as events/1 to show event with id 1
         
 #bugs 
+
     • Search bar input may cause page malfunctioning
         -Routing errors if the input is different than:
             -users/1 
@@ -37,6 +38,7 @@
     
     
 #Pending features
+
     • The CRUD operations are not woring on Events comments, due to not being selected a User
     • In User, view invited evets
     • Vote date for events
