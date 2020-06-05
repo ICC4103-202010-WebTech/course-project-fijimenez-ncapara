@@ -31,6 +31,13 @@
             -events
             -users
             -organizations
+        - the method mentioned above is searching by id
+#Pending features
+    • Vote date for events
+    • Invite guests to events
+    • public events for organization 
+    • Search events by substring title, creator(if searching by id is not considered),
+        by organization.    
 
 # Project 2 
 
