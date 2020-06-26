@@ -16,6 +16,9 @@
     <div class="form-group col-centered">
       <%= form.datetime_local_field :start_date, class: "table-gold" %>
     </div>
+    <%= form.label :public %>
+    <%= form.check_box :public, class: "table-gold" %>
+
     <div class="form-group mt-2 ">
         <%= form.submit submit_btn_text, class: ["btn", "btn-red"] %>
         <%= link_to "Back", :back, class: ["btn", "btn-red"] %>
