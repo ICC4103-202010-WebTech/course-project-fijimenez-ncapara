@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<table class="table table-darkred">
+  <tbody>
+  <h1>Event invitation accepted for <%=@eie.name %></h1>
+  <tr>
+    <th scope="col"> <%= @eiu.name %> just joined</th>
+  </tr>
+  <tr>
+    <% @ulist.each do |item|%>
+    <tr>
+      <td><%= item.name %></td>
+    </tr>
+  <% end %>
+  </tr>
+  </tbody>
+</table>
 <%= link_to 'Edit', edit_event_invitation_path(@event_invitation) %> |
 <%= link_to 'Back', event_invitations_path %>

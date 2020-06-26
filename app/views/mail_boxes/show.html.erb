@@ -1,7 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<% @items.each do |item|%>
+<table class="table table-darkred">
+  <tbody>
+  <h1>Inbox </h1>
   <tr>
-    <td><%= item[:message] %></td>
+    <th scope="col"> messages</th>
   </tr>
-<% end %>
+  <tr>
+    <% @items.each do |item|%>
+    <tr>
+      <td><%= item[:message] %></td>
+      <td><%='answer'%></td>
+    </tr>
+  <% end %>
+  </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Compose new message',new_user_mail_box_inbox_message_url(@mail_box.id,@mail_box.id)%>
+
