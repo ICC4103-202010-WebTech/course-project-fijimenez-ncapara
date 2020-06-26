@@ -13,7 +13,7 @@
     <h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1>
   </header>
   <nav class="nav navbar-nav navbar-expand-sm">
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.administrator %>
         <ul id="navbar">
           <li><a href="/users"> Users</a></li>
         </ul>
@@ -39,6 +39,9 @@
     <% if user_signed_in? %>
       <ul id="navbar">
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <ul id="navbar">
+        <li><%= link_to "MyProfile", current_user%></li>
       </ul>
     <% else %>
       <ul id="navbar">
