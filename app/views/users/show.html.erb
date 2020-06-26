@@ -16,6 +16,7 @@
     <td><%= @user.email %></td>
     <td><%= @user.location %></td>
     <td><%= @user.bio %></td>
+    <td><%= link_to 'Mail', user_mail_box_url(@user)%></td>
   </tr>
   </tbody>
 </table>

@@ -10,6 +10,15 @@ class MailBoxesController < ApplicationController
   # GET /mail_boxes/1
   # GET /mail_boxes/1.json
   def show
+    @messages = InboxMessage.joins(:mail_box).where(mail_boxes:  {id:params[:id]})
+    @items = []
+    begin
+      @messages.each do | mm |
+        @items << { message: mm.message}
+      end
+    rescue
+
+    end
   end
 
   # GET /mail_boxes/new
