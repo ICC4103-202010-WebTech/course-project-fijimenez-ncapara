@@ -8,11 +8,11 @@
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <% @comments.each_with_index do |comment,i| %>
+      <%#= render @comments %>
       <div class="col-lg-4 table-bordered table-active">
         <h4>User: <%=comment.user.name %></h4>
         <h4>Event: <%=comment.event.name %></h4>
         <h1><%=comment.description %></h1>
-
         <div class="btn btn-group-toggle">
           <label class="btn btn-secondary">
             <input type="radio" name="options" id="option1"><%= link_to 'Show', comment %>

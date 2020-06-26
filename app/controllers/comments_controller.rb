@@ -11,8 +11,10 @@ class CommentsController < ApplicationController
   # GET /comments/1.json
   def show
     @comments = Comment.joins(:event).where(events: {id:params[:id]})
-    @replies  = Comment.joins(:comments).where(comments: {id:comment.reply_id})
+    comments =  Comment.joins(:event).where(events: {id:params[:id]})
+    # @replies  = Comment.joins(comments).where(comment: {reply_id:comments.reply_id})
     @event = Event.where(id = {id:params[:id]}).map{|x| x.name}
+    @replies = @comment.replies
   end
 
   # GET /comments/new
