@@ -84,4 +84,21 @@
   <% end %>
 </table>
 
-<%= 'Go To Mail box' %>   <!-- #dejar asi porque no logro pasarle usuario para abrirlo especificamente -->
+<br>
+<br>
+
+<p><h3>Current events in which i will participate</h3></p>
+<table class="table table-darkred">
+  <th scope="col"> Event Name</th>
+  <th scope="col"> Options</th>
+  <%@total.each do |e| %>
+    <tr>
+      <td><%= e.name %></td>
+      <td>
+        <label class="btn-sm table-gold">
+          <%= link_to 'Go To Event', e%>
+        </label>
+      </td>
+    </tr>
+  <% end %>
+</table>
