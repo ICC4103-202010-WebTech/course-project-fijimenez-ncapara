@@ -2,10 +2,37 @@
 
 <table class="table table-darkred">
   <tbody>
-  <h1>Event invitation accepted for <%=@eie.name %></h1>
+<!--  <h1>Invitation for <%#=@eie.name %></h1>-->
   <tr>
-    <th scope="col"> <%= @eiu.name %> just joined</th>
+<!--    <th scope="col"> <%#= @eiu.name %> are you sure you want to join the event <%#=@eie.name %> ?</th>-->
+<!--    <td><button onclick="myFunction()">Accept</button></td>-->
   </tr>
+<!--  <script>-->
+<!--      function myFunction() {-->
+<!--          var x = document.createElement("FORM");-->
+<!--          x.name = 'myForm';-->
+<!--          x.method = 'POST';-->
+<!--          x.action = '/event_invitations';-->
+<!--          var b = document.createElement('INPUT');-->
+<!--          b.type='TEXT';-->
+<!--          b.name='user_id';-->
+<!--          b.value='@eiu.id';-->
+<!--          x.appendChild(b);-->
+<!--          var c = document.createElement('INPUT');-->
+<!--          c.type='TEXT';-->
+<!--          c.name='event_id';-->
+<!--          c.value='@eie.id';-->
+<!--          x.appendChild(c);-->
+<!--          document.body.appendChild(x);-->
+<!--          x.submit();-->
+<!--      }-->
+<!--  </script>-->
+  </tbody>
+</table>
+
+<table class="table table-darkred">
+  <tbody>
+  <h1>Members</h1>
   <tr>
     <% @ulist.each do |item|%>
     <tr>
@@ -15,5 +42,7 @@
   </tr>
   </tbody>
 </table>
-<%= link_to 'Edit', edit_event_invitation_path(@event_invitation) %> |
-<%= link_to 'Back', event_invitations_path %>
+
+
+<!--<%#= link_to 'Edit', edit_event_invitation_path(@event_invitation) %> |-->
+<%#= link_to 'Back', event_invitations_path %>

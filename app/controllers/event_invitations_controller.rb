@@ -10,13 +10,14 @@ class EventInvitationsController < ApplicationController
   # GET /event_invitations/1
   # GET /event_invitations/1.json
   def show
-    @eie = Event.find(params[:id])
     @eiu = User.find(current_user.id)
     @ulist = User.joins(:event_invitations).where(event_invitations:  {id:params[:id]})
   end
 
   # GET /event_invitations/new
   def new
+    # @eie = Event.find(params[:id])
+    @eiu = User.find(current_user.id)
     @event_invitation = EventInvitation.new
   end
 
@@ -27,14 +28,11 @@ class EventInvitationsController < ApplicationController
   # POST /event_invitations
   # POST /event_invitations.json
   def create
-    @eie = Event.find(params[:id])
-    @eiu = User.find(current_user.id)
-    @event_invitation = EventInvitation.new(user:@eiu,event:@eie)
-    # @event_invitation = EventInvitation.new(event_invitation_params)
+    @event_invitation = EventInvitation.new(event_invitation_params)
 
     respond_to do |format|
       if @event_invitation.save
-        format.html { redirect_to @event_invitation, notice: 'Event invitation was successfully created.' }
+        format.html { redirect_to @event_invitation, notice: 'Event invitation was successfully accepted.' }
         format.json { render :show, status: :created, location: @event_invitation }
       else
         format.html { render :new }
@@ -75,6 +73,6 @@ class EventInvitationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_invitation_params
-      params.fetch(:event_invitation, {})
+      params.fetch(:event_invitation, {}).permit(:user_id,:event_id)
     end
 end
