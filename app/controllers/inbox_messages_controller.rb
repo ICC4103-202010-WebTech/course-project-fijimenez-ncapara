@@ -14,6 +14,8 @@ class InboxMessagesController < ApplicationController
 
   # GET /inbox_messages/new
   def new
+    # @mb = MailBox.where(user_id: current_user.id)
+    @ib = User.find(current_user.id)
     @inbox_message = InboxMessage.new
   end
 
@@ -69,6 +71,6 @@ class InboxMessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inbox_message_params
-      params.fetch(:inbox_message, {})
+      params.fetch(:inbox_message, {}).permit(:mailbox_id,:message)
     end
 end

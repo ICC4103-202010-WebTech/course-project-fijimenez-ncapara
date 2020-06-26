@@ -16,7 +16,8 @@ class EventInvitationsController < ApplicationController
 
   # GET /event_invitations/new
   def new
-    # @eie = Event.find(params[:id])
+    @test = params[:id]
+    # @eie = Event.find(id: params[:id])
     @eiu = User.find(current_user.id)
     @event_invitation = EventInvitation.new
   end

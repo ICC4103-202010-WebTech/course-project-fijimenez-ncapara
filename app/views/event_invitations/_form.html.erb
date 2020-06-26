@@ -18,6 +18,7 @@
     <%= form.label :event %>
     <%= form.collection_select(:event_id, Event.all.order(name: :asc), :id, :name, {}, { class: "form-control" }) %>
   </div>
+<%= event_invitation.event_id %>
   <div class="actions">
     <%= form.submit %>
   </div>

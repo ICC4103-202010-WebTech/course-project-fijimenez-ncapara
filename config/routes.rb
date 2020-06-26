@@ -58,5 +58,6 @@ Rails.application.routes.draw do
     resources :subscriptions, defaults: { format: :html }
   end
   resources :subscriptions, defaults: { format: :html }
+  resources :inbox_messages, defaults: { format: :html}
 
 end
