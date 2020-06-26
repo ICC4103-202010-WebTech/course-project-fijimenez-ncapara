@@ -28,6 +28,9 @@
     <label class="btn table-gold">
       <%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
     </label>
+    <label class="btn table-gold">
+      <%= link_to 'Back', users_path %>
+    </label>
   <% elsif @user.id == current_user.id%>
     <label class="btn table-gold">
       <%= link_to 'Edit Profile', edit_user_registration_path %>
@@ -35,10 +38,10 @@
     <label class="btn table-gold">
       <%= link_to 'Cancel Account ', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
     </label>
+    <label class="btn table-gold">
+      <%= link_to 'Back', root_path %>
+    </label>
   <%end %>
-  <label class="btn table-gold">
-    <%= link_to 'Back', users_path %>
-  </label>
 </td>
 </table>
 <br>
