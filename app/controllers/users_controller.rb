@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if current_user.administrator
+      @users = User.all
+    else
+      @users = User.where(id: current_user.id)
+    end
+    @active = current_user
   end
 
   # GET /users/1

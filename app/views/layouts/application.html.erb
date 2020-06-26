@@ -10,37 +10,56 @@
   </head>
   <body>
   <header>
-    <h1 style="font-size: 100%"><a href="http://localhost:3000/"><cus>WingManBook</cus></a></h1>
+    <h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1>
   </header>
-    <nav class="nav navbar-nav">
+  <nav class="nav navbar-nav navbar-expand-sm">
+      <% if user_signed_in? %>
+        <ul id="navbar">
+          <li><a href="/users"> Users</a></li>
+        </ul>
+      <% end %>
       <ul id="navbar">
-        <li><a href="http://localhost:3000/users"> Users</a></li>
+        <li><a href="/events"> Events</a></li>
       </ul>
       <ul id="navbar">
-        <li><a href="http://localhost:3000/events"> Events</a></li>
+        <li><a href="/organizations"> Organizations</a></li>
       </ul>
-      <ul id="navbar">
-        <li><a href="http://localhost:3000/organizations"> Organizations</a></li>
+
+
       </ul>
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav ml-auto">
         <form id="tfnewsearch" method="get" action="http://localhost:3000/">
-        <input id="searchbar" onkeyup="" type="text"
-               name="search" placeholder="Search...">
-        <button type="submit"><i class="fa fa-search"></i></button>
+          <input id="searchbar" onkeyup="" type="text"
+                 name="search" placeholder="Search...">
+          <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </ul>
+    </div>
+    <% if user_signed_in? %>
+      <ul id="navbar">
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul id="navbar">
+        <li><%= link_to "Log in", user_session_path %></li>
+      </ul>
+      <ul id="navbar">
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+      </ul>
+    <% end %>
 
-      <script>
-          var a = document.getElementById('tfnewsearch');
-          a.addEventListener('submit',function(e) {
-              e.preventDefault();
-              var b = document.getElementById('searchbar').value;
-                  window.location.href = 'http://localhost:3000/'+b;
+    <script>
+        var a = document.getElementById('tfnewsearch');
+        a.addEventListener('submit',function(e) {
+            e.preventDefault();
+            var b = document.getElementById('searchbar').value;
+            window.location.href = 'http://localhost:3000/'+b;
 
-          });
+        });
 
-      </script>
-    </nav>
+    </script>
+  </nav>
     <main>
       <%= yield %>
     </main>
