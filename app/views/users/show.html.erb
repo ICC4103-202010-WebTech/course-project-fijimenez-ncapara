@@ -21,9 +21,15 @@
 </table>
 <table class="table-darkred">
 <td class="btn btn-group-toggle">
-  <label class="btn table-gold">
-    <%= link_to 'Edit User', edit_user_path(@user) %>
-  </label>
+  <% if current_user.administrator%>
+    <label class="btn table-gold">
+      <%= link_to 'Edit User', edit_user_path(@user) %>
+    </label>
+  <% elsif @user.id == current_user.id%>
+    <label class="btn table-gold">
+      <%= link_to 'Edit Profile', edit_user_registration_path %>
+    </label>
+  <%end %>
   <label class="btn table-gold">
     <%= link_to 'Back', users_path %>
   </label>
