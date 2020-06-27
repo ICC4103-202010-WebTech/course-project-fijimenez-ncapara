@@ -59,11 +59,10 @@
   <th scope="col"> File Previews</th>
   <tr>
 <%@event.mFiles.each do |v|%>
-      <%= v %>
-  <% if v.representable? %>
-    <td><%= image_tag(v,class: "image", width: "200", height: "auto", id:"img" )%></td>
-  <% elsif v.previewable? %>
-      <%= image_tag(v.preview(resize: "200x200>"))%>
+  <% if v.previewable? %>
+        <td> <%= image_tag(v.preview(resize_to_limit: [100, 100]))%></td>
+  <% elsif v.representable? %>
+        <td><%= image_tag(v,class: "image", width: "200", height: "auto", id:"img" )%></td>
   <% else %>
     <td><%= 'N/A'%></td>
   <%end %>
