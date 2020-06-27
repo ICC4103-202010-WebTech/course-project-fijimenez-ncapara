@@ -1,26 +1,22 @@
 class SearchController < ApplicationController
+
   def search
     @events = Event.where("name LIKE ?","%#{params[:search]}%").or(Event.where("description LIKE ?","%#{params[:search]}%"))
+    @events_user = Event.joins(:user).where("users.name LIKE ?","%#{params[:search]}%")
+    @events_org = Event.joins(:organization).where("organizations.name LIKE ?","%#{params[:search]}%")
     @users =  User.where("name LIKE ?","%#{params[:search]}%")
+    @organizations = Organization.where("name LIKE ?","%#{params[:search]}%")
   end
 
   private
   def event_params
     params.require(:event).permit(:name, :description, :start_date, :user_id )
   end
+  def user_params
+    params.require(:user).permit(:name, :email )
+  end
+  def organizations_params
+    params.require(:organization).permit(:name)
+  end
 end
 
-
-#
-# t.string "name"
-# t.date "start_date"
-# t.string "description"
-# t.integer "minVotes"
-# t.integer "assistants"
-# t.boolean "public"
-# t.datetime "created_at", precision: 6, null: false
-# t.datetime "updated_at", precision: 6, null: false
-# t.integer "user_id"
-# t.integer "organization_id"
-# t.index ["organization_id"], name: "index_events_on_organization_id"
-# t.index ["user_id"], name: "index_events_on_user_id"

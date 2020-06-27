@@ -64,7 +64,7 @@ do13 = DateOption.create!(event:e1,desired_date:DateTime.new(2020,04,30))
 do21 = DateOption.create!(event:e2,desired_date:DateTime.new(2020,04,25))
 do21 = DateOption.create!(event:e2,desired_date:DateTime.new(2020,04,24))
 do21 = DateOption.create!(event:e2,desired_date:DateTime.new(2020,04,23))
-
+|
 
 #VOTE DATE
 vd11 = VoteDate.create!(event_invitation:ei1,date_option:do11)
@@ -74,7 +74,7 @@ vd21 = VoteDate.create!(event_invitation:ei3,date_option:do21)
 
 #REPORTS
 r11 = Report.create!(user:u2,event:e2,motive:"The Piscola is with Black you moron")
-r12 = Report.create!(user:u3,event:e2,motive:"This pink thinks piscola is with white... what a waste of pisco")
+r12 = Report.create!(user:u3,event:e2,motive:"This punk thinks piscola is with white... what a waste of pisco")
 
 #COMMENT
 # this is  an comment with a reply

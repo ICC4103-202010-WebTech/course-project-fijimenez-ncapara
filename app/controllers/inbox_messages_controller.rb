@@ -14,7 +14,7 @@ class InboxMessagesController < ApplicationController
 
   # GET /inbox_messages/new
   def new
-    # @mb = MailBox.where(user_id: current_user.id)
+    @mb = MailBox.where(user: current_user)
     @ib = User.find(current_user.id)
     @inbox_message = InboxMessage.new
   end
