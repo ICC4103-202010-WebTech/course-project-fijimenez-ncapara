@@ -71,6 +71,6 @@ class InboxMessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inbox_message_params
-      params.fetch(:inbox_message, {}).permit(:mailbox_id,:message)
+      params.fetch(:inbox_message, {}).permit(:mail_box_id,:message)
     end
 end

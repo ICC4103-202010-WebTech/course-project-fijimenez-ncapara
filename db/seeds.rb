@@ -64,7 +64,7 @@ do13 = DateOption.create!(event:e1,desired_date:DateTime.new(2020,04,30))
 do21 = DateOption.create!(event:e2,desired_date:DateTime.new(2020,04,25))
 do21 = DateOption.create!(event:e2,desired_date:DateTime.new(2020,04,24))
 do21 = DateOption.create!(event:e2,desired_date:DateTime.new(2020,04,23))
-|
+
 
 #VOTE DATE
 vd11 = VoteDate.create!(event_invitation:ei1,date_option:do11)
