@@ -13,5 +13,6 @@ class Event < ApplicationRecord
   validates :start_date, not_in_past: true
 
   has_one_attached :flyer
+  has_many_attached :mFiles
 
 end
