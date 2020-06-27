@@ -55,4 +55,19 @@
   <% end %>
 </table>
 
+<table class="table table-darkred">
+  <th scope="col"> File Previews</th>
+  <tr>
+<%@event.mFiles.each do |v|%>
+  <% if v.representable? %>
+    <td><%= image_tag(v.representation(resize: '500x500') )%></td>
+    <% else %>
+    <td><%= 'N/A'%></td>
+  <%end %>
+<% end %>
+    </tr>
+</table>
+
+<br>
+
 <%= link_to 'Join event' , new_event_invitation_url(@event, current_user) %>
