@@ -1,0 +1,63 @@
+<div class="row ml-0 mt-3">
+  <h2>Search Results</h2>
+</div>
+<% if @events.length > 0  %>
+  <div class="row ml-0 mt-2">
+    <p><%=@events.length %> matches found for Events.</p>
+  </div>
+  <div class="row">
+    <% @events.each do |event| %>
+      <%= render partial: 'events/event_tile', locals: { event: event } %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="row ml-0 mt-2">
+    <p>No matches found for Events.</p>
+  </div>
+<% end %>
+<% if @users.length > 0  %>
+  <div class="row ml-0 mt-2">
+  <p><%=@users.length %> matches found for Users.</p>
+  </div>
+  <div class="row">
+    <% @users.each_with_index do |user,i| %>
+      <div class="col-lg-4 table-bordered table-active">
+        <p>
+          <% if user.photo.attached? %>
+            <%= link_to image_tag(user.photo,class: "rounded-circle card-img-top", width: "250", height: "250", id:"img", background: "#55595c", color: "#eceeef"), url_for(user) %>
+          <%else %>
+            <%= link_to image_tag("thumbnail.svg", class: "rounded-circle card-img-top",width: "250", height: "250", background: "#55595c", color: "#eceeef"), url_for(user) %>
+          <%end %>
+        </p>
+        <h2><%=user.name %></h2>
+        <h4><%=user.email %></h4>
+        <div class="btn btn-group-toggle">
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1"> <%= link_to 'Show', user %>
+          </label>
+          <% if user_signed_in?%>
+            <% if current_user.administrator%>
+              <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2"> <%= link_to 'Edit', edit_user_path(user) %>
+              </label>
+            <% elsif user.id == current_user.id%>
+              <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option2"> <%= link_to 'Edit', edit_user_registration_path %>
+              </label>
+            <%end %>
+            <% if user.id == current_user.id || current_user.administrator%>
+              <label class="btn btn-secondary">
+                <input type="radio" name="options" id="option3"> <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </label>
+            <%end %>
+          <%end %>
+        </div>
+        </p>
+      </div><!-- /.col-lg-4 -->
+    <%end %>
+  </div><!-- /.row -->
+<% else %>
+  <div class="row ml-0 mt-2">
+    <p>No matches found for Users.</p>
+  </div>
+<% end %>
