@@ -4,6 +4,13 @@
     <div class="form-group col-centered">
       <%= form.file_field :flyer %>
     </div>
+
+    <%= form.label :"Event files" %>
+    <div class="form-group col-centered">
+      <%= form.file_field :mFiles, multiple: true %>
+    </div>
+
+
     <%= form.label :name %>
     <div class="form-group col-centered">
       <%= form.text_field :name, class: "table-gold" %>

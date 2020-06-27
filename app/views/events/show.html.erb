@@ -15,6 +15,9 @@
     <th scope="col"> Minimal Votes</th>
     <th scope="col"> assistants</th>
     <th scope="col"> Is it Public?</th>
+    <% if @event.mFiles.attached? %>
+      <th scope="col"> files attached</th>
+    <%end %>
   </tr>
   <tr>
     <td><%= @event.start_date %></td>
@@ -22,13 +25,16 @@
     <td><%= @event.minVotes %></td>
     <td><%= @event.assistants %></td>
     <td><%= @event.public %></td>
+    <% if @event.mFiles.attached? %>
+      <td><%= @event.mFiles.count() %></td>
+    <%end %>
   </tr>
   </tbody>
 </table>
 <table class="table-darkred">
   <td class="btn btn-group-toggle">
     <label class="btn table-gold">
-      <%= link_to 'Edit Event', edit_user_path(@event) %>
+      <%= link_to 'Edit Event', edit_event_path(@event) %>
     </label>
     <label class="btn table-gold">
       <%= link_to 'Back', users_path %>
@@ -48,5 +54,20 @@
     </tr>
   <% end %>
 </table>
+
+<table class="table table-darkred">
+  <th scope="col"> File Previews</th>
+  <tr>
+<%@event.mFiles.each do |v|%>
+  <% if v.representable? %>
+    <td><%= image_tag(v.representation(resize: '500x500') )%></td>
+    <% else %>
+    <td><%= 'N/A'%></td>
+  <%end %>
+<% end %>
+    </tr>
+</table>
+
+<br>
 
 <%= link_to 'Join event' , new_event_invitation_url(@event, current_user) %>
