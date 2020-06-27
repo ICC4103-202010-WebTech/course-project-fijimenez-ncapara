@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
-  belongs_to :parent,  class_name: "Comment" #-> requires "parent_id" column
-  has_many   :replies, class_name: "Comment", foreign_key: :parent_id, dependent: :destroy
+  has_many :comments, class_name: "Comment", foreign_key: :"reply_id"
+  belongs_to :reply, class_name: "Comment", optional: true
   belongs_to :event
   belongs_to :user
 end
