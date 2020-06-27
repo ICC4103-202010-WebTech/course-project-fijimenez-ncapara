@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @comments = Comment.joins(:user).where(users: {id:params[:id]})
     @events = Event.joins(:user).where(users: {id:params[:id]})
     @total = Event.joins(:event_invitations).where(event_invitations: {user_id:params[:id]})
-
+    @mball = MailBox.all()
   end
 
   # GET /users/new

@@ -12,6 +12,7 @@ class EventInvitationsController < ApplicationController
   def show
     @eiu = User.find(current_user.id)
     @ulist = User.joins(:event_invitations).where(event_invitations:  {id:params[:id]})
+    @total = Event.joins(:event_invitations).where(event_invitations: {id:params[:id]}).last
   end
 
   # GET /event_invitations/new

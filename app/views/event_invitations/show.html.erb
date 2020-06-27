@@ -32,11 +32,13 @@
 
 <table class="table table-darkred">
   <tbody>
-  <h1>Members</h1>
+  <h1></h1>
   <tr>
     <% @ulist.each do |item|%>
     <tr>
-      <td><%= item.name %></td>
+      <td><%= item.name %> just joined</td>
+      <td><%= @total.name %></td>
+      <td><%= link_to 'Go to event', @total %></td>
     </tr>
   <% end %>
   </tr>

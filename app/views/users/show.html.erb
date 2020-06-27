@@ -20,7 +20,17 @@
     <td><%= @user.location %></td>
     <td><%= @user.bio %></td>
     <% if @user.id == current_user.id || current_user.administrator%>
-      <td><%= link_to 'Go to Mail', user_mail_box_url(@user)%></td>
+      <% @mball.each do |dd|%>
+        <% if dd.id == current_user.id%>
+          <td><%= link_to 'Go to Mail', user_mail_box_url(@user)%></td>
+        <% else %>
+<!--    code to create new mailbox linked to the user id goes here-->
+<!--    as also the link button that triggers the create and furthermore connects to inbox-->
+<!--    probably inbox will need to be created too-->
+        <% end %>
+
+      <%end %>
+<!--      <td><%#= link_to 'Go to Mail', user_mail_box_url(@user)%></td>-->
     <%end %>
   </tr>
   </tbody>
