@@ -40,6 +40,21 @@
     • Mailbox
         • See inbox.
         • View incoming message.
+        
+    • Events
+        • View event
+            • View title, description, location, and creation date.
+            • View images.
+        • Delete event.
+        • Edit event.
+    
+    • Search
+        • Search user (name or username).
+        • Search organization.
+        • Search event by substring in title / description.
+        • Search event by creator.
+        • Search event by organization.
+        
 ### •bugs 
 
     • Registration
@@ -50,7 +65,16 @@
         
     • Mailbox
         • Compose message to user.    
-     
+    
+    • Events
+            • View event
+                • View file attachments. shows N/A
+                • View videos.
+            • Invite guests.
+    
+    • Search
+        • Search event shows repeated events
+            
 ### •Pending features
 
     • System Access
@@ -59,11 +83,23 @@
     • User Administration
         • Last acces 
         
-     • System Administration
+    • System Administration
             • Perform CRUD operations on Event comments.
             
-     • Organization
+    • Organization
              • See public events.
+             
+    • Events
+            • Start event date vote.
+            • Configure event date vote.      
+            • Vote for event date.
+            • Add comment.
+            • View comments.
+            • Report event as inappropriate.   
+    
+    • Acceptable Use Policy (AUP) and Terms of Service (ToS).
+        • Provide AUP and ToS documents.
+        •Report abusive content.
              
 # Project 3
 
