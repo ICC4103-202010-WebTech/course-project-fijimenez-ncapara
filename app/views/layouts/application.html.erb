@@ -13,9 +13,9 @@
 <!--    <h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1>-->
     <table  >
         <tr>
-          <td><h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1></td>
+          <td style="width: 90%"><h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1></td>
           <% if user_signed_in?%>
-            <td class="mr-auto" style="padding:0 400px 0 400px;" >Connected as: <%= current_user.name%></td>
+            <td class="mr-auto" style="float: right" >Connected as: <%= current_user.name%></td>
           <% end %>
         </tr>
     </table>
