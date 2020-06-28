@@ -26,19 +26,31 @@
         • Perform CRUD operations on Organizations.
         • Perform CRUD operations on Events.
         
-       5. User Profile
-       (a) View user profile.
-       (b) Edit user profile.
-       i. Edit user fields: name, bio, location.
-       (c) View events to which the user has been invited.
-       (d) View created events
-    
+    • User Profile
+       • View user profile.
+       • Edit user profile.
+       • Edit user fields: name, bio, location.
+        • View events to which the user has been invited.
+        • View created events
+        
+    • Organization
+        • View organization page.
+        • Manage organization page.
+        
+    • Mailbox
+        • See inbox.
+        • View incoming message.
 ### •bugs 
 
     • Registration
         • For password recovery , you enter the page, and ask for it, but it doesn't send the email to recover the password
+    
     • User Administration
         • User Role exist, but is not viewable 
+        
+    • Mailbox
+        • Compose message to user.    
+     
 ### •Pending features
 
     • System Access
@@ -49,6 +61,10 @@
         
      • System Administration
             • Perform CRUD operations on Event comments.
+            
+     • Organization
+             • See public events.
+             
 # Project 3
 
 ### • Summary of implemented features.
