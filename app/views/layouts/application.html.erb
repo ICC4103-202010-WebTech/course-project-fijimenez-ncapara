@@ -60,11 +60,6 @@
 
     </script>
   </nav>
-  <% if user_signed_in? %>
-    <div class="alert alert-dark">
-      <%= current_user.name %>
-    </div>
-  <% end %>
     <main>
       <%= yield %>
     </main>
