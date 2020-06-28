@@ -18,6 +18,20 @@
     • User Administration
         • New User
         • Edit User
+        • Change Password
+        • Delete User
+        
+    • System Administration
+        • Perform CRUD operations on Users.
+        • Perform CRUD operations on Organizations.
+        • Perform CRUD operations on Events.
+        
+       5. User Profile
+       (a) View user profile.
+       (b) Edit user profile.
+       i. Edit user fields: name, bio, location.
+       (c) View events to which the user has been invited.
+       (d) View created events
     
 ### •bugs 
 
@@ -32,6 +46,9 @@
         
     • User Administration
         • Last acces 
+        
+     • System Administration
+            • Perform CRUD operations on Event comments.
 # Project 3
 
 ### • Summary of implemented features.
