@@ -51,6 +51,7 @@ ei1 = EventInvitation.create!(user:u3,event:e1)
 ei2 = EventInvitation.create!(user:u2,event:e1)
 ei3 = EventInvitation.create!(user:u4,event:e2)
 ei4 = EventInvitation.create!(user:u4,event:e1)
+ei5 = EventInvitation.create!(user:u1,event:e1)
 
 #NOTIFICATIONS
 n11 = Notification.create!(event:e1,note:"the time for the event will be 2020-06-13",file:"Creator Date Notification")
@@ -99,3 +100,4 @@ mb5 = MailBox.create!(user:u5)
 
 ib1 = InboxMessage.create!(mail_box:mb2,message:"1v1 in the Code Challenge")
 ib2 = InboxMessage.create!(mail_box:mb3,message:"It´s on!")
+ib3 = InboxMessage.create!(mail_box:mb1,message:"WOOOOW")

@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_06_24_081745) do
   end
 
   create_table "event_invitations", force: :cascade do |t|
+    t.boolean "accepted", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
