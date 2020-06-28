@@ -3,6 +3,35 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
+# Project 4
+
+### • Summary of implemented features.
+
+    • System Access
+        • Log in with email address
+        • Log out
+        
+    • Registration
+        • User Registration
+        • Change password
+        
+    • User Administration
+        • New User
+        • Edit User
+    
+### •bugs 
+
+    • Registration
+        • For password recovery , you enter the page, and ask for it, but it doesn't send the email to recover the password
+    • User Administration
+        • User Role exist, but is not viewable 
+### •Pending features
+
+    • System Access
+        • Log in with Google and Device at the same time
+        
+    • User Administration
+        • Last acces 
 # Project 3
 
 ### • Summary of implemented features.
