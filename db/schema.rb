@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_07_05_073351) do
 
   create_table "comments", force: :cascade do |t|
     t.string "description"
+    t.integer "reply_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
@@ -63,7 +64,6 @@ ActiveRecord::Schema.define(version: 2020_07_05_073351) do
   end
 
   create_table "event_invitations", force: :cascade do |t|
-    t.boolean "accepted", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 2020_07_05_073351) do
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at",  precision: 6, null: false
+    t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 

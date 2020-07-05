@@ -28,7 +28,8 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @event = Event.find(params[:comment][:event_id])
+    @comment = @event.comments.build(comment_params)
 
     respond_to do |format|
       if @comment.save
@@ -73,6 +74,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.fetch(:comment, {})
+      params.fetch(:comment, {}).permit(:description, :user_id, :event_id)
     end
 end

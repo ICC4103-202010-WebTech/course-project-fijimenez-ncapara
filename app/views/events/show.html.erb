@@ -34,7 +34,7 @@
 <table class="table-darkred">
   <td class="btn btn-group-toggle">
     <label class="btn table-gold">
-      <%= link_to 'Edit Event', edit_event_path(@event) %>
+      <%= link_to 'Edit Event', edit_event_path(@event.id) %>
     </label>
     <label class="btn table-gold">
       <%= link_to 'Back', users_path %>
@@ -49,8 +49,8 @@
   <th scope="col"> Leave a Reply</th>
   <%@comments.each do |v|%>
     <tr>
-      <td><%= v%></td>
-      <td><%= link_to 'reply', new_comment_path(@event) %></td>
+      <td><%= v.description%></td>
+      <td><%= link_to 'reply', new_event_comment_url(@event) %></td>
     </tr>
   <% end %>
 </table>

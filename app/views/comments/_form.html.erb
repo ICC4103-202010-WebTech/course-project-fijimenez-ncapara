@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :event_id, :value => params[:event_id]%>
+  </div>
+
+  <%= form.label :description %>
+  <div class="form-group col-centered">
+    <%= form.text_field :description, class: "table-gold" %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
