@@ -10,7 +10,6 @@ class SearchController < ApplicationController
 
     @number = (@events.ids + @events_org.ids + @events_user.ids).uniq
 
-    @UserOnORG = Subscription.where(user: current_user)
     @organizations = Organization.where("name LIKE ?","%#{params[:search]}%")
   end
 
