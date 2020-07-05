@@ -1,23 +1,64 @@
 <div class="row ml-0 mt-3">
   <h2>Search Results</h2>
 </div>
-<% if @events.length + @events_org.length  + @events_user.length  > 0  %>
-  <div class="row ml-0 mt-2">
-    <p><%=@events.length + @events_org.length  + @events_user.length %> matches found for Events.</p>
+<% if @number  > 0  %>
+  <div class="row ml-auto mt-auto">
+    <p><%=@number %> matches found for Events.</p>
   </div>
-  <div class="row">
-    <% @events.each do |event| %>
-      <%= render partial: 'events/event_tile', locals: { event: event } %>
-    <% end %>
-    <% @events_org.each do |event2| %>
-      <%#=if event2 == event  %>
-
-      <%# end %>
-      <%= render partial: 'events/event_tile', locals: { event: event2 } %>
-    <% end %>
-    <% @events_user.each do |event3| %>
-      <%= render partial: 'events/event_tile', locals: { event: event3 } %>
-    <% end %>
+  <div class="row ml-auto mt-auto">
+    <% if @events.ids.length != 0 or @events_org.ids.length != 0 or @events_user.ids.length != 0 %>
+      <% if @events.ids.length != 0 and @events_org.ids.length != 0 and @events_user.ids.length != 0 %>
+        <% @events.each do |event| %>
+          <% @events_org.each do |event2| %>
+            <%if event2.id == event.id %>
+              <%= render partial: 'events/event_tile', locals: { event: event } %>
+            <%else%>
+              <% @events_user.each do |event3| %>
+                <%if event.id == event3.id%>
+                  <%= render partial: 'events/event_tile', locals: { event: event } %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% elsif @events.ids.length != 0 and @events_user.ids.length != 0%>
+        <% @events.each do |event| %>
+          <% @events_user.each do |event2| %>
+            <%if event2.id == event.id %>
+              <%= render partial: 'events/event_tile', locals: { event: event } %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% elsif @events.ids.length != 0 and @events_org.ids.length != 0%>
+        <% @events.each do |event| %>
+          <% @events_org.each do |event2| %>
+            <%if event2.id == event.id %>
+              <%= render partial: 'events/event_tile', locals: { event: event } %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% elsif @events_user.ids.length != 0 and @events_org.ids.length != 0%>
+        <% @events_user.each do |event| %>
+          <% @events_org.each do |event2| %>
+            <%if event2.id == event.id %>
+              <%= render partial: 'events/event_tile', locals: { event: event } %>
+            <% end %>
+          <% end %>
+        <% end %>
+        <% elsif @events.ids.length != 0%>
+          <% @events.each do |event| %>
+            <%= render partial: 'events/event_tile', locals: { event: event } %>
+          <% end %>
+        <% elsif @events_org.ids.length != 0%>
+          <% @events_org.each do |event| %>
+            <%= render partial: 'events/event_tile', locals: { event: event } %>
+          <% end %>
+        <% elsif @events_user.ids.length != 0%>
+          <% @events_user.each do |event| %>
+            <%= render partial: 'events/event_tile', locals: { event: event } %>
+          <% end %>
+        <% end %>
+      <% end %>
   </div>
 <% else %>
   <div class="row ml-0 mt-2">

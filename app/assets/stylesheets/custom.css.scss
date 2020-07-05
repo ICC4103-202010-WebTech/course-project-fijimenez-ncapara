@@ -4,9 +4,9 @@
   a:hover {
     background-color: #250000 !important; /* the background when the selection is mouse-focused */
   }
-  ul:hover {
-    background-color: #250000 !important; /* the background when the selection is mouse-focused */
-  }
+  //ul:hover {
+  //  background-color: #250000 !important; /* the background when the selection is mouse-focused */
+  //}
   li:hover {
     background-color: #250000 !important; /* the background when the selection is mouse-focused */
   }
@@ -114,3 +114,6 @@ img {
   background: darkgoldenrod;
 }
 
+.topnav-right {
+  float: right;
+}

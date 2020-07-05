@@ -21,7 +21,11 @@
   <tr>
     <td><%= v.id %></td>
     <td><%= v.description %></td>
-    <td><%= v.reply_id %></td>
+    <%@replies.each do |r|%>
+      <%if (v.comment_id == r.id) %>
+        <td><%= r.description %></td>
+        <%end %>
+    <%end %>
     <td><%= v.user.name %></td>
 
     <td><%= link_to 'Back', "http://localhost:3000" %></td>

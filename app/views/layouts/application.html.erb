@@ -11,51 +11,47 @@
   <body>
   <header>
 <!--    <h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1>-->
-    <table  >
-        <tr>
-          <td style="width: 90%"><h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1></td>
-          <% if user_signed_in?%>
-            <td class="mr-auto" style="float: right" >Connected as: <%= current_user.name%></td>
-          <% end %>
-        </tr>
-    </table>
-  </header>
-  <nav class="nav navbar-nav navbar-expand-sm">
-      <% if user_signed_in? && current_user.administrator %>
-        <ul id="navbar">
-          <li><a href="/users"> Users</a></li>
-        </ul>
+
+    <div class = "row">
+      <div class = "col">
+        <h1 style="font-size: 100%"><a href="/"><cus>WingManBook</cus></a></h1>
+      </div>
+      <% if user_signed_in?%>
+        <div class = "col">
+          <p style="text-align:right;"><con>Connected as: <%= current_user.name%></con></p>
+        </div>
       <% end %>
-      <ul id="navbar">
-        <li><a href="/events"> Events</a></li>
-      </ul>
-      <ul id="navbar">
-        <li><a href="/organizations"> Organizations</a></li>
-      </ul>
-
-
-      </ul>
-
-    <form class="form-inline mt-2 mt-md-0" id="search_form" action = "/search/search">
-      <%= text_field_tag :search, params[:search] %>
-      <button class="btn btn-outline-success my-2 my-sm-0" id="search_button" type="submit">Search</button>
-    </form>
-
-    <% if user_signed_in? %>
-      <ul id="navbar">
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-      </ul>
-      <ul id="navbar">
-        <li><%= link_to "MyProfile", current_user%></li>
-      </ul>
-    <% else %>
-      <ul id="navbar">
-        <li><%= link_to "Log in", user_session_path %></li>
-      </ul>
-      <ul id="navbar">
-        <li><%= link_to "Sign up", new_user_registration_path %></li>
-      </ul>
+    </div>
+  </header>
+  <div class = "navbar topnav nav">
+    <ul id="navbar">
+    <% if user_signed_in? && current_user.administrator %>
+      <li><a class = "active" href="/users"> Users</a></li>
     <% end %>
+      <li><a href="/events"> Events</a></li>
+      <li><a href="/organizations"> Organizations</a></li>
+    </ul>
+    <div class="topnav-right">
+      <ul id="navbar">
+        <li>
+        <form class="form-inline" id="search_form" action = "/search/search">
+          <%= text_field_tag :search, params[:search] %>
+         <button class="btn btn-outline-success my-2 my-sm-0" id="search_button" type="submit">Search</button>
+        </form>
+        </li>
+
+        <% if user_signed_in? %>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to "MyProfile", current_user%></li>
+        <% else %>
+              <li><%= link_to "Log in", user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
 
     <script>
         var a = document.getElementById('tfnewsearch');
