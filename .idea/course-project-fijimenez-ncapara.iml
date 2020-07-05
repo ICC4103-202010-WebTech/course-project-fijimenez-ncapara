@@ -41,6 +41,7 @@
     <orderEntry type="library" scope="PROVIDED" name="byebug (v11.1.2, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cairo (v1.16.5, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cairo-gobject (v3.4.3, ruby-2.6.5-p114) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cancancan (v3.1.0, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.32.1, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="childprocess (v3.0.0, ruby-2.6.5-p114) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.6, ruby-2.6.5-p114) [gem]" level="application" />

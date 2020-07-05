@@ -22,8 +22,10 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group  btn-group-toggle">
                 <button type="button" class="btn btn-gold"><%= link_to "View", organization %></button>
-                <button type="button" class="btn btn-sm btn-gold"><%= link_to "Edit", edit_event_path(organization)%></button>
-                <button type="button" class="btn btn-sm btn-gold"><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                <% if user_signed_in? && current_user.administrator  %>
+                  <button type="button" class="btn btn-sm btn-gold"><%= link_to "Edit", edit_event_path(organization)%></button>
+                  <button type="button" class="btn btn-sm btn-gold"><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                <%end %>
               </div>
               <!--
               <small class="text-muted">%= "#{(event.start_date.to_date - DateTime.now.to_date).to_i} days left!" %></small>
