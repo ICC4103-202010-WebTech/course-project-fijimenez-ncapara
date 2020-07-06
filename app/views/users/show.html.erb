@@ -11,8 +11,16 @@
     <th scope="col"> Email</th>
     <th scope="col"> Location</th>
     <th scope="col"> Biography</th>
-    <% if @user.id == current_user.id || current_user.administrator%>
-    <th scope="col"> MailBox</th>
+    <% if @user.id == current_user.id || current_user.administrator?%>
+      <% @mball.each do |dd|%>
+        <% if (not current_user.administrator) and (dd.id == current_user.id)%>
+          <th scope="col"> MailBox</th>
+        <% else %>
+          <% if (current_user.administrator?) and (dd.id == @user.id) %>
+            <th scope="col"> MailBox</th>
+          <%end %>
+        <%end %>
+      <%end %>
     <%end %>
   </tr>
   <tr>

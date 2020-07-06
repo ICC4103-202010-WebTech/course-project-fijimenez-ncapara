@@ -30,10 +30,14 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-    if user.administrator?
-      can :manage, :all
-    else
-      can :read, id: user.id
+    if user.present?
+      can :read, :all
+      if user.administrator?
+        can :manage, :all
+      else
+        can :manage, User, id: user.id
+        can :manage, Event, user_id: user.id
+      end
     end
   end
 end

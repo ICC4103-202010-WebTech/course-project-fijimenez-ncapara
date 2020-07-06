@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if current_user.administrator
+    if current_user.administrator?
       @users = User.all
     else
       @users = User.where(id: current_user.id)
@@ -78,6 +78,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {}).permit(:id, :email, :password, :bio, :location, :name, :photo)
+      params.fetch(:user, {}).permit(:id, :email, :password, :bio, :location, :name, :photo, :administrator)
     end
 end

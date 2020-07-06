@@ -1,4 +1,4 @@
-<div class="row ml-0 mt-3">
+<div class="row ml-auto mt-auto">
   <h2>Search Results</h2>
 </div>
 <% if @number.length  > 0  %>
@@ -15,17 +15,17 @@
     <%end %>
   </div>
 <% else %>
-  <div class="row ml-0 mt-2">
+  <div class="row ml-auto mt-auto">
     <p>No matches found for Events.</p>
   </div>
 <% end %>
 
 
 <% if @organizations.length > 0  %>
-  <div class="row ml-0 mt-2">
+  <div class="row ml-auto mt-auto">
     <p><%=@organizations.length %> matches found for Organizations.</p>
   </div>
-  <div class="row">
+  <div class="row ml-auto mt-auto">
     <% @organizations.each do |organization| %>
       <div class="col-md-4">
         <div class="card mb-4 shadow-sm table-darkred">
@@ -52,17 +52,17 @@
     <%end %>
   </div>
 <% else %>
-  <div class="row ml-0 mt-2">
+  <div class="row ml-auto mt-auto">
     <p>No matches found for Organizations.</p>
   </div>
 <% end %>
 
 
 <% if @users.length > 0  %>
-  <div class="row ml-0 mt-2">
+  <div class="row ml-auto mt-auto">
   <p><%=@users.length %> matches found for Users.</p>
   </div>
-  <div class="row">
+  <div class="row ml-auto mt-auto table-bordered table-active">
     <% @users.each_with_index do |user,i| %>
       <div class="col-lg-4 table-bordered table-active">
         <p>
@@ -95,12 +95,11 @@
             <%end %>
           <%end %>
         </div>
-        </p>
       </div><!-- /.col-lg-4 -->
     <%end %>
   </div><!-- /.row -->
 <% else %>
-  <div class="row ml-0 mt-2">
+  <div class="row ml-auto mt-auto">
     <p>No matches found for Users.</p>
   </div>
 <% end %>
