@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
+  # get 'events/new_event_invitations', to: "event_invitations#new", as: :send_invite_otf
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
