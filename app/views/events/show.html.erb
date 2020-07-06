@@ -34,11 +34,13 @@
 
 <table class="table-darkred">
   <td class="btn btn-group-toggle">
+    <%if user_signed_in? and (current_user == @event.user or current_user.administrator) %>
+      <label class="btn table-gold">
+        <%= link_to 'Edit Event', edit_event_path(@event.id) %>
+      </label>
+    <%end %>
     <label class="btn table-gold">
-      <%= link_to 'Edit Event', edit_event_path(@event.id) %>
-    </label>
-    <label class="btn table-gold">
-      <%= link_to 'Back', users_path %>
+      <%= link_to 'Back', :back %>
     </label>
   </td>
 </table>

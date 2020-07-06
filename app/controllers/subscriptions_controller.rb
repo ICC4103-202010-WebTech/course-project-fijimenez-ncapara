@@ -15,6 +15,7 @@ class SubscriptionsController < ApplicationController
 
   # GET /subscriptions/new
   def new
+    @org = Organization.all
     @subscription = Subscription.new
   end
 
