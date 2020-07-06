@@ -41,6 +41,17 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :location %>
+    <div class="form-group col-centered">
+      <%= f.text_field :location %>
+    </div>
+    <%= f.label :bio %>
+    <div class="form-group col-centered">
+      <%= f.text_area :bio%>
+    </div>
+  </div><br />
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
