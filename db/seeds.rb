@@ -84,7 +84,7 @@ c12 = Comment.create!(description:"I'll win win this time",event:e1,user:u2)
 c11.comments << c12  #C12 is the reply comment of c11
 #this are comments separated
 c21 = Comment.create!(description:"This is a crime!",event:e2,user:u1)
-c22 = Comment.create!(description:"Why do you do this?",event:e2,user:u5)  # line 80 and 81 are separated comments
+c22 = Comment.create!(description:"Why do you do this?",event:e2,user:u5)
 c23 = Comment.create!(description:"The Piscola is with Black you moron",event:e2,user:u2)
 c24 = Comment.create!(description:"what a waste of pisco",event:e2,user:u3)
 c23.comments << c24 # this is a reply to a comment
