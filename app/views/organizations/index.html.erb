@@ -23,7 +23,7 @@
               <div class="btn-group  btn-group-toggle">
                 <button type="button" class="btn btn-gold"><%= link_to "View", organization %></button>
                 <% if user_signed_in? && current_user.administrator  %>
-                  <button type="button" class="btn btn-sm btn-gold"><%= link_to "Edit", edit_event_path(organization)%></button>
+                  <button type="button" class="btn btn-sm btn-gold"><%= link_to "Edit", edit_organization_path(organization)%></button>
                   <button type="button" class="btn btn-sm btn-gold"><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></button>
                 <%end %>
               </div>
