@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-<h1 class="align-content-center">Event: <%= @event.name %></h1>
-
 <p id="notice" class ="table-gold"><%= notice %></p>
+<h1 class="align-content-center">Event: <%= @event.name %></h1>
 <% if @event.flyer.attached? %>
   <img class="img mx-auto d-block" data-toggle="modal" data-target="#exampleModalCenter"
   <%= image_tag @event.flyer,class: "image", width: "200", height: "auto", id:"img"%>

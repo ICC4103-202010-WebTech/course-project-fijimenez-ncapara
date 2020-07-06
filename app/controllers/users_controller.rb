@@ -4,11 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if current_user.administrator?
-      @users = User.all
-    else
-      @users = User.where(id: current_user.id)
-    end
+    @users = User.all
     @active = current_user
   end
 
@@ -51,6 +47,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        format.json{ sign_in(current_user, :bypass => true) }
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
