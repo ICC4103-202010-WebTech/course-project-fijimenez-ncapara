@@ -15,7 +15,7 @@
 #USERS
 u1 = User.create!(name:"Pedro Perez",email:"pperez@gmail.com",password:"pedro123",bio:"The old pedro",location:"San Carlos 123",administrator:false)
 u2 = User.create!(name:"Chuck Norris",email:"Chuck@Norris.com",password:"NotNeeded",bio:"You really need it?",location:"space",administrator:true) # Chuck Norris MUST be administrator
-u3 = User.create!(name:"Bruce Lee",email:"LeeBrue@gmail.com",password:"LeeBruce",bio:"Died for not being Chuck",location:"Earth's core",administrator:true)
+u3 = User.create!(name:"Bruce Lee",email:"LeeBruce@gmail.com",password:"LeeBruce",bio:"Died for not being Chuck",location:"Earth's core",administrator:true)
 u4 = User.create!(name:"Cuico",email:"ImTheCuico@money.cl",password:"PerroPapaPichangaPiscola",bio:"Sup Dogie, my father can buy us a piscola",location:"With the K",administrator:false)
 u5 = User.create!(name:"Jotaro", email:"Jojo@miuandes.cl",password:"StarPlatinum",bio:"The Protagonist of the JOJO series", location:"Rome, Italy",administrator:false)
 
@@ -38,7 +38,7 @@ s4 = Subscription.create!(rank:"follower",user:u5,organization:o1)
 e1 = Event.create!(name:"Code Challenge", start_date:"05/10/2021", description:"Coding for Homework at 6:00 AM",minVotes:2,public:true, user:u2)
 
 e2 = Event.create!(name:"Not violence, drink piscola 'perro'", start_date:"05/10/2021", description:"hey 'perro', violence is for nerds, now its time to piscola with white",minVotes:4,public:true, user:u4)
-e3 = Event.create!(name:"Norris Cup", start_date:"05/10/2021",description:"Hwo get no the Chuck level)",minVotes:3,public:false, user:u2, organization:o1)
+e3 = Event.create!(name:"Norris Cup", start_date:"05/10/2021",description:"How get near the Chuck level)",minVotes:3, public:true, user:u2, organization:o1)
 
 #EVENT FILES
 ef11 = EventFile.create!(event:e1, file:"Computer.jpg")
@@ -84,7 +84,7 @@ c12 = Comment.create!(description:"I'll win win this time",event:e1,user:u2)
 c11.comments << c12  #C12 is the reply comment of c11
 #this are comments separated
 c21 = Comment.create!(description:"This is a crime!",event:e2,user:u1)
-c22 = Comment.create!(description:"Why do you do this?",event:e2,user:u5)  # line 80 and 81 are separated comments
+c22 = Comment.create!(description:"Why do you do this?",event:e2,user:u5)
 c23 = Comment.create!(description:"The Piscola is with Black you moron",event:e2,user:u2)
 c24 = Comment.create!(description:"what a waste of pisco",event:e2,user:u3)
 c23.comments << c24 # this is a reply to a comment

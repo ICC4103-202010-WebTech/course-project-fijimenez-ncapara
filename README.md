@@ -3,6 +3,98 @@
 * Francisco Javier Jimenez Iglesias
 * Nicolas Claus Apara Reineking
 
+# Presentation 
+
+### • Summary of implemented features.
+
+    1. System Access
+        (a) Log in with email address.
+        (c) Log out.
+    2. Registration
+        (a) User registration.
+        (b) Change password.
+        (c) Password recovery.
+    3. User Administration
+        (a) New user.
+        (c) Edit User.
+            i. Change password.
+        (d) Delete user.
+    4. System Administration
+        (a) Perform CRUD operations on Users.
+        (b) Perform CRUD operations on Organizations.
+        (c) Perform CRUD operations on Events.
+    5. User Profile
+        (a) View user profile.
+        (b) Edit user profile.
+            i. Edit user fields: name, bio, location.
+        (c) View events to which the user has been invited.
+        (d) View created events.
+    6. Organization
+        • View organization page.
+        • Manage organization page.
+        • See public events.
+    7. Mailbox
+        • See inbox.
+        • View incoming message.
+        • Compose message to user.
+    8. Events
+        (a) View event
+            i. View title, description, location, and creation date.
+            ii. View images.
+        (f) Delete event.
+        (g) Edit event.
+        (h) Add comment.
+        (i) View comments.
+        (j) Report event as inappropriate.
+    10. Search
+        (a) Search user (name or username).
+        (b) Search organization.
+        (c) Search event by substring in title / description.
+        (d) Search event by creator.
+        (e) Search event by organization.
+        
+        
+### •bugs 
+
+
+    2. Registration
+        (b) Change password. -> Only to my own account, admin can´t change it
+    3. User Administration
+        (c) Edit User.
+            i. Change password. --> Only to my own account, admin can´t change it 
+    4. System Administration
+        (d) Perform CRUD operations on Event comments.       
+    7. Mailbox
+        • Compose message to user. --> 
+    8. Events
+        (a) View event
+            iii. View file attachments.
+        (e) Invite guests.
+                
+### •Pending features
+
+    1. System Access
+        (b) Log in with Google authentication.
+    2. Registration
+        (c) Password recovery.
+    3. User Administration
+            (b) View user details.
+                i. Last access.
+                ii. User role.
+    6. Organization
+        • See public events.
+    8. Events
+            (a) View event
+                iv. View videos.
+            (b) Start event date vote.
+            (c) Configure event date vote.
+            (d) Vote for event date.
+            (e) Invite guests.
+            (j) Report event as inappropriate.
+    9. Acceptable Use Policy (AUP) and Terms of Service (ToS).
+            (a) Provide AUP and ToS documents.
+            (b) Report abusive content.
+        
 # Project 4
 
 ### • Summary of implemented features.
