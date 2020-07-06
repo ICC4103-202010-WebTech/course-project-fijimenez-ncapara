@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     end
     resources :event_files, defaults: { format: :html }
     resources :notifications, defaults: { format: :html }
+    resources :event_invitations, defaults: { format: :html}
   end
 
   resources :event_invitations, defaults: { format: :html} do

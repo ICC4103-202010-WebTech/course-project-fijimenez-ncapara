@@ -30,11 +30,14 @@ class EventInvitationsController < ApplicationController
   # POST /event_invitations
   # POST /event_invitations.json
   def create
-    @event_invitation = EventInvitation.new(event_invitation_params)
+    @event = Event.find(params[:event_invitation][:event_id])
+    @event_invitation = @event.event_invitations.build(event_invitation_params)
+
+    # @event_invitation = EventInvitation.new(event_invitation_params)
 
     respond_to do |format|
       if @event_invitation.save
-        format.html { redirect_to @event_invitation, notice: 'Event invitation was successfully accepted.' }
+        format.html { redirect_to @event, notice: 'Event invitation was successfully accepted.' }
         format.json { render :show, status: :created, location: @event_invitation }
       else
         format.html { render :new }

@@ -45,8 +45,8 @@
 
 <p><h3>Comments or replies to the event</h3></p>
 <table class="table table-darkred">
-  <th scope="col"> Comment</th>
-  <th scope="col"> Leave a Reply</th>
+  <th scope="col"> <label class="btn table-gold"><%= link_to 'Comment', new_event_comment_url(@event) %></label></th>
+  <th scope="col"> <label class="btn table-gold">Leave a Reply</label></th>
   <%@comments.each do |v|%>
     <tr>
       <td><%= v.description%></td>
@@ -72,4 +72,4 @@
 
 <br>
 
-<%= link_to 'Join event' , new_event_invitation_url(@event, current_user) %>
+<%= link_to 'Join event' , new_event_event_invitation_url(@event) %>
