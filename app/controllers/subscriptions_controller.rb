@@ -24,11 +24,15 @@ class SubscriptionsController < ApplicationController
   # POST /subscriptions
   # POST /subscriptions.json
   def create
+    @org = Organization.find(params[:subscription][:organization_id])
+    @subscription = @org.subscriptions.build(subscription_params)
+
+
     @subscription = Subscription.new(subscription_params)
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
+        format.html { redirect_to @org, notice: 'Subscription was successfully created.' }
         format.json { render :show, status: :created, location: @subscription }
       else
         format.html { render :new }
@@ -69,6 +73,6 @@ class SubscriptionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subscription_params
-      params.fetch(:subscription, {})
+      params.fetch(:subscription, {}).permit(:user_id, :organization_id)
     end
 end
